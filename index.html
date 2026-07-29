@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DYNAMONEXOVRA TECHNOLOGY — Software Engineering, Auraiya</title>
+<meta name="description" content="DYNAMONEXOVRA TECHNOLOGY — a registered software development company in Auraiya, Uttar Pradesh, building web, mobile and enterprise systems with engineering precision." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0E2233', deep: '#0A1B29', mid: '#132C41' },
+          cyan: { DEFAULT: '#6FD3E0', dim: '#3E7C8A' },
+          brass: { DEFAULT: '#D4A24C', light: '#E8C079' },
+          paper: '#F4F1E8',
+          ink: '#16202B',
+          slateline: '#9FB4C2',
+          graphite: '#57626B',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['"IBM Plex Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'IBM Plex Sans', sans-serif; background: #F4F1E8; color: #16202B; }
+
+  ::selection { background: #D4A24C; color: #0E2233; }
+
+  /* Focus visibility for accessibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #D4A24C;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Blueprint grid background */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(111,211,224,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(111,211,224,0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .blueprint-grid-lg {
+    background-image:
+      linear-gradient(rgba(111,211,224,0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(111,211,224,0.14) 1px, transparent 1px);
+    background-size: 160px 160px;
+  }
+
+  /* Circuit line drawing animation */
+  .circuit-path {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: draw 3.2s ease-out forwards;
+  }
+  .circuit-path.d2 { animation-delay: .3s; }
+  .circuit-path.d3 { animation-delay: .6s; }
+  .circuit-path.d4 { animation-delay: .9s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  .node-pulse { animation: pulse-node 2.6s ease-in-out infinite; }
+  @keyframes pulse-node {
+    0%, 100% { opacity: .35; r: 3; }
+    50% { opacity: 1; r: 4.5; }
+  }
+
+  /* Title-block stamp rotation (subtle, slow) */
+  .stamp {
+    animation: stampfloat 7s ease-in-out infinite;
+  }
+  @keyframes stampfloat {
+    0%, 100% { transform: rotate(-3deg) translateY(0px); }
+    50% { transform: rotate(-3deg) translateY(-6px); }
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.in-view > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger > * {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
+  }
+  .reveal-stagger > *:nth-child(1) { transition-delay: .05s; }
+  .reveal-stagger > *:nth-child(2) { transition-delay: .15s; }
+  .reveal-stagger > *:nth-child(3) { transition-delay: .25s; }
+  .reveal-stagger > *:nth-child(4) { transition-delay: .35s; }
+  .reveal-stagger > *:nth-child(5) { transition-delay: .45s; }
+  .reveal-stagger > *:nth-child(6) { transition-delay: .55s; }
+
+  /* Card hover lift */
+  .lift-card { transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, border-color .35s ease; }
+  .lift-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgba(14,34,51,0.35); border-color: #D4A24C; }
+
+  /* Nav underline */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px;
+    background: #D4A24C; transition: width .3s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+  /* Marquee for tech stack */
+  .marquee-track { animation: marquee 26s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Mobile menu */
+  #mobile-menu { transition: max-height .45s cubic-bezier(.22,.61,.36,1), opacity .35s ease; }
+
+  /* Back to top */
+  #back-to-top { transition: opacity .35s ease, transform .35s ease; }
+
+  /* Blinking cursor for hero eyebrow */
+  .cursor-blink { animation: blink 1.1s step-start infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* Loading bar for form submit */
+  @keyframes loadbar { from { width: 0%; } to { width: 100%; } }
+
+  /* Ticker dot */
+  .status-dot { box-shadow: 0 0 0 0 rgba(111,211,224,.6); animation: dotping 2s infinite; }
+  @keyframes dotping {
+    0% { box-shadow: 0 0 0 0 rgba(111,211,224,.55); }
+    70% { box-shadow: 0 0 0 8px rgba(111,211,224,0); }
+    100% { box-shadow: 0 0 0 0 rgba(111,211,224,0); }
+  }
+
+  /* Reduced motion respects user preference */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .circuit-path, .node-pulse, .stamp, .marquee-track, .status-dot, .cursor-blink {
+      animation: none !important;
+    }
+    .reveal, .reveal-stagger > * { transition: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  input, textarea { transition: border-color .25s ease, box-shadow .25s ease; }
+  input:focus, textarea:focus { border-color: #D4A24C; box-shadow: 0 0 0 4px rgba(212,162,76,0.15); }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #0E2233; }
+  ::-webkit-scrollbar-thumb { background: #3E7C8A; border-radius: 6px; }
+</style>
+</head>
+
+<body class="bg-paper text-ink antialiased">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-brass focus:text-navy focus:px-4 focus:py-2 focus:rounded font-mono text-sm">Skip to main content</a>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-navy/95 backdrop-blur border-b border-cyan/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 md:h-20 transition-all duration-300">
+    <a href="#top" class="flex items-center gap-3 group" aria-label="DYNAMONEXOVRA TECHNOLOGY — home">
+      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
+        <rect x="1" y="1" width="38" height="38" rx="8" stroke="#D4A24C" stroke-width="1.5"/>
+        <path d="M10 28V12h6.5a8 8 0 0 1 0 16H10Z" stroke="#6FD3E0" stroke-width="1.6" fill="none"/>
+        <circle cx="29" cy="12" r="2" fill="#D4A24C" class="node-pulse"/>
+      </svg>
+      <span class="font-display font-semibold tracking-tight text-paper text-sm sm:text-base leading-none">
+        DYNAMONEXOVRA<span class="text-brass">.</span><br class="hidden sm:block"/>
+        <span class="text-[10px] sm:text-xs font-mono font-normal tracking-[0.25em] text-slateline">TECHNOLOGY</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-slateline" aria-label="Primary">
+      <a href="#services" class="nav-link hover:text-paper transition-colors">Services</a>
+      <a href="#process" class="nav-link hover:text-paper transition-colors">Process</a>
+      <a href="#work" class="nav-link hover:text-paper transition-colors">Why Us</a>
+      <a href="#stack" class="nav-link hover:text-paper transition-colors">Stack</a>
+      <a href="#testimonials" class="nav-link hover:text-paper transition-colors">Clients</a>
+      <a href="#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-brass hover:bg-brass-light text-navy font-mono text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brass/20">
+        Start a project
+      </a>
+      <button id="menu-toggle" class="lg:hidden text-paper p-2 -mr-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+        <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" class="hidden"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 bg-navy-deep border-t border-cyan/10">
+    <nav class="flex flex-col px-6 py-4 gap-1 font-mono text-sm uppercase tracking-wider text-slateline" aria-label="Mobile">
+      <a href="#services" class="py-3 border-b border-white/5 hover:text-brass transition-colors">Services</a>
+      <a href="#process" class="py-3 border-b border-white/5 hover:text-brass transition-colors">Process</a>
+      <a href="#work" class="py-3 border-b border-white/5 hover:text-brass transition-colors">Why Us</a>
+      <a href="#stack" class="py-3 border-b border-white/5 hover:text-brass transition-colors">Stack</a>
+      <a href="#testimonials" class="py-3 border-b border-white/5 hover:text-brass transition-colors">Clients</a>
+      <a href="#contact" class="py-3 hover:text-brass transition-colors">Contact</a>
+      <a href="#contact" class="mt-3 inline-flex justify-center bg-brass text-navy font-semibold px-4 py-3 rounded-sm">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative bg-navy text-paper pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden blueprint-grid">
+  <!-- animated circuit svg -->
+  <svg class="absolute inset-0 w-full h-full opacity-70 pointer-events-none" viewBox="0 0 1200 700" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path class="circuit-path" d="M0 120 H260 V220 H520 V90 H820" stroke="#6FD3E0" stroke-width="1.4" fill="none"/>
+    <path class="circuit-path d2" d="M1200 500 H900 V380 H640 V540 H300" stroke="#6FD3E0" stroke-width="1.4" fill="none"/>
+    <path class="circuit-path d3" d="M60 650 V430 H360 V300" stroke="#3E7C8A" stroke-width="1.2" fill="none"/>
+    <path class="circuit-path d4" d="M1150 60 V240 H860 V150" stroke="#3E7C8A" stroke-width="1.2" fill="none"/>
+    <circle cx="820" cy="90" r="3.5" fill="#D4A24C" class="node-pulse"/>
+    <circle cx="300" cy="540" r="3.5" fill="#D4A24C" class="node-pulse"/>
+    <circle cx="360" cy="300" r="3.5" fill="#D4A24C" class="node-pulse"/>
+    <circle cx="860" cy="150" r="3.5" fill="#D4A24C" class="node-pulse"/>
+  </svg>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.15fr,0.85fr] gap-14 items-center">
+    <div>
+      <p class="font-mono text-xs sm:text-sm tracking-[0.3em] uppercase text-cyan mb-5 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan status-dot"></span>
+        Software Engineering &middot; Auraiya, Uttar Pradesh<span class="cursor-blink">_</span>
+      </p>
+      <h1 class="font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight">
+        We draft systems<br class="hidden sm:block"/> the way engineers<br class="hidden sm:block"/> draft <span class="text-brass">blueprints.</span>
+      </h1>
+      <p class="mt-6 text-slateline text-base sm:text-lg max-w-xl leading-relaxed">
+        DYNAMONEXOVRA TECHNOLOGY builds web platforms, mobile apps and enterprise software with the same discipline as a structural drawing — every requirement measured, every decision documented, every release signed off.
+      </p>
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brass text-navy font-mono text-sm uppercase tracking-wider font-semibold px-6 py-3.5 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brass/20">
+          Request a proposal
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#services" class="inline-flex items-center justify-center gap-2 border border-cyan/30 text-paper font-mono text-sm uppercase tracking-wider px-6 py-3.5 rounded-sm hover:border-cyan hover:bg-white/5 transition-all">
+          View services
+        </a>
+      </div>
+
+      <dl class="mt-12 grid grid-cols-3 max-w-md gap-6 border-t border-white/10 pt-6">
+        <div>
+          <dt class="sr-only">Projects delivered</dt>
+          <dd class="font-display text-2xl sm:text-3xl font-semibold text-paper"><span class="counter" data-target="120">0</span>+</dd>
+          <p class="font-mono text-[11px] uppercase tracking-wider text-slateline mt-1">Projects shipped</p>
+        </div>
+        <div>
+          <dt class="sr-only">Client satisfaction</dt>
+          <dd class="font-display text-2xl sm:text-3xl font-semibold text-paper"><span class="counter" data-target="98">0</span>%</dd>
+          <p class="font-mono text-[11px] uppercase tracking-wider text-slateline mt-1">Client retention</p>
+        </div>
+        <div>
+          <dt class="sr-only">Average uptime</dt>
+          <dd class="font-display text-2xl sm:text-3xl font-semibold text-paper"><span class="counter" data-target="99">0</span>.9%</dd>
+          <p class="font-mono text-[11px] uppercase tracking-wider text-slateline mt-1">Avg. uptime SLA</p>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Signature: technical title-block stamp -->
+    <div class="relative hidden sm:flex justify-center lg:justify-end">
+      <div class="stamp bg-paper text-ink w-72 sm:w-80 rounded-sm shadow-2xl shadow-black/40 border-2 border-navy p-5 font-mono text-xs -rotate-3">
+        <div class="flex items-center justify-between border-b-2 border-navy pb-2 mb-3">
+          <span class="uppercase tracking-widest font-semibold text-[10px]">Title Block</span>
+          <span class="w-6 h-6 rounded-full border-2 border-brass flex items-center justify-center text-brass font-bold text-[10px]">DX</span>
+        </div>
+        <p class="uppercase tracking-wider text-[10px] text-graphite">Firm</p>
+        <p class="font-display font-semibold text-sm mb-2">DYNAMONEXOVRA TECHNOLOGY</p>
+        <p class="uppercase tracking-wider text-[10px] text-graphite">Registered office</p>
+        <p class="text-[11px] leading-snug mb-2">182 Bheekhampur, Auraiya,<br/>Uttar Pradesh — 206122, India</p>
+        <div class="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-dashed border-navy/30">
+          <div>
+            <p class="uppercase tracking-wider text-[10px] text-graphite">Doc No.</p>
+            <p class="text-[11px]">DX-2026-001</p>
+          </div>
+          <div>
+            <p class="uppercase tracking-wider text-[10px] text-graphite">Scale</p>
+            <p class="text-[11px]">1:1</p>
+          </div>
+          <div>
+            <p class="uppercase tracking-wider text-[10px] text-graphite">Status</p>
+            <p class="text-[11px] text-emerald-700 font-semibold">Approved</p>
+          </div>
+          <div>
+            <p class="uppercase tracking-wider text-[10px] text-graphite">Rev.</p>
+            <p class="text-[11px]">A</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST / LEGAL STRIP ============ -->
+<section class="bg-navy-deep text-slateline border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 font-mono text-[11px] uppercase tracking-widest">
+    <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1 12 3v4c0 3.3-2.1 5.6-5 6-2.9-.4-5-2.7-5-6V3l5-2Z" stroke="#D4A24C" stroke-width="1.2"/></svg> MSME Registered*</span>
+    <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#D4A24C" stroke-width="1.2"/><path d="M4.5 7l1.7 1.7L9.7 5" stroke="#D4A24C" stroke-width="1.2"/></svg> Startup India Recognised*</span>
+    <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1" stroke="#D4A24C" stroke-width="1.2"/><path d="M1 5h12" stroke="#D4A24C" stroke-width="1.2"/></svg> GST Registered*</span>
+    <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M2 4h10M2 10h10" stroke="#D4A24C" stroke-width="1.2"/></svg> NDA-First Engagements</span>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-graphite mb-3">// Capabilities</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl tracking-tight text-navy">What we build</h2>
+      <p class="mt-4 text-graphite text-base sm:text-lg leading-relaxed">Six disciplines, one delivery standard. Every engagement is scoped, estimated and signed off before a line of code ships.</p>
+    </div>
+
+    <div class="reveal-stagger mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- card template -->
+      <article class="lift-card group bg-white border border-navy/10 rounded-sm p-7">
+        <div class="w-11 h-11 rounded-sm bg-navy flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 5h16M2 10h16M2 15h16" stroke="#6FD3E0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <p class="font-mono text-[11px] text-brass uppercase tracking-widest mb-1">01 / Web</p>
+        <h3 class="font-display font-semibold text-lg text-navy mb-2">Web application development</h3>
+        <p class="text-graphite text-sm leading-relaxed">Responsive, SEO-ready platforms built on modern frameworks — from marketing sites to complex internal tools.</p>
+      </article>
+
+      <article class="lift-card group bg-white border border-navy/10 rounded-sm p-7">
+        <div class="w-11 h-11 rounded-sm bg-navy flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="6" y="2" width="8" height="16" rx="1.5" stroke="#6FD3E0" stroke-width="1.5"/><path d="M9 15h2" stroke="#6FD3E0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <p class="font-mono text-[11px] text-brass uppercase tracking-widest mb-1">02 / Mobile</p>
+        <h3 class="font-display font-semibold text-lg text-navy mb-2">Mobile app engineering</h3>
+        <p class="text-graphite text-sm leading-relaxed">Native and cross-platform apps for Android and iOS, engineered for offline reliability and smooth performance.</p>
+      </article>
+
+      <article class="lift-card group bg-white border border-navy/10 rounded-sm p-7">
+        <div class="w-11 h-11 rounded-sm bg-navy flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="11" rx="1.5" stroke="#6FD3E0" stroke-width="1.5"/><path d="M7 17h6" stroke="#6FD3E0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <p class="font-mono text-[11px] text-brass uppercase tracking-widest mb-1">03 / Enterprise</p>
+        <h3 class="font-display font-semibold text-lg text-navy mb-2">Custom software &amp; ERP</h3>
+        <p class="text-graphite text-sm leading-relaxed">Purpose-built systems for inventory, billing, HR and operations — replacing spreadsheets with real workflows.</p>
+      </article>
+
+      <article class="lift-card group bg-white border border-navy/10 rounded-sm p-7">
+        <div class="w-11 h-11 rounded-sm bg-navy flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" stroke="#6FD3E0" stroke-width="1.5"/><path d="M10 2v3M10 15v3M2 10h3M15 10h3M4.5 4.5l2 2M13.5 13.5l2 2M4.5 15.5l2-2M13.5 6.5l2-2" stroke="#6FD3E0" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <p class="font-mono text-[11px] text-brass uppercase tracking-widest mb-1">04 / Cloud</p>
+        <h3 class="font-display font-semibold text-lg text-navy mb-2">Cloud &amp; DevOps</h3>
+        <p class="text-graphite text-sm leading-relaxed">CI/CD pipelines, containerised deployments and infrastructure that scales without surprise costs.</p>
+      </article>
+
+      <article class="lift-card group bg-white border border-navy/10 rounded-sm p-7">
+        <div class="w-11 h-11 rounded-sm bg-navy flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15V9l7-5 7 5v6" stroke="#6FD3E0" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 15v-4h6v4" stroke="#6FD3E0" stroke-width="1.5"/></svg>
+        </div>
+        <p class="font-mono text-[11px] text-brass uppercase tracking-widest mb-1">05 / Design</p>
+        <h3 class="font-display font-semibold text-lg text-navy mb-2">UI/UX &amp; product design</h3>
+        <p class="text-graphite text-sm leading-relaxed">Interfaces designed around how people actually work, tested with real users before a single sprint starts.</p>
+      </article>
+
+      <article class="lift-card group bg-white border border-navy/10 rounded-sm p-7">
+        <div class="w-11 h-11 rounded-sm bg-navy flex items-center justify-center mb-5">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16 8 8 0 000-16Z" stroke="#6FD3E0" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="#6FD3E0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <p class="font-mono text-[11px] text-brass uppercase tracking-widest mb-1">06 / Support</p>
+        <h3 class="font-display font-semibold text-lg text-navy mb-2">IT consulting &amp; maintenance</h3>
+        <p class="text-graphite text-sm leading-relaxed">Ongoing audits, monitoring and support contracts so systems stay fast, secure and up to date.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="py-20 md:py-28 bg-navy text-paper relative overflow-hidden blueprint-grid-lg">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="reveal max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-cyan mb-3">// Delivery sequence</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl tracking-tight">How a project moves through our studio</h2>
+      <p class="mt-4 text-slateline text-base sm:text-lg leading-relaxed">A fixed five-stage pipeline. Each stage has a defined output before the next one begins — no skipped steps, no scope surprises.</p>
+    </div>
+
+    <ol class="reveal-stagger mt-14 grid md:grid-cols-5 gap-6 md:gap-4">
+      <li class="relative border-t-2 border-cyan/40 pt-5">
+        <span class="font-mono text-brass text-2xl font-semibold">01</span>
+        <h3 class="font-display font-semibold mt-2 mb-2">Discovery</h3>
+        <p class="text-slateline text-sm leading-relaxed">Requirement workshops, stakeholder interviews and a written scope document.</p>
+      </li>
+      <li class="relative border-t-2 border-cyan/40 pt-5">
+        <span class="font-mono text-brass text-2xl font-semibold">02</span>
+        <h3 class="font-display font-semibold mt-2 mb-2">Architecture</h3>
+        <p class="text-slateline text-sm leading-relaxed">System design, data modelling and UI wireframes, reviewed with you before build.</p>
+      </li>
+      <li class="relative border-t-2 border-cyan/40 pt-5">
+        <span class="font-mono text-brass text-2xl font-semibold">03</span>
+        <h3 class="font-display font-semibold mt-2 mb-2">Development</h3>
+        <p class="text-slateline text-sm leading-relaxed">Sprint-based build with weekly demos and a shared tracker for visibility.</p>
+      </li>
+      <li class="relative border-t-2 border-cyan/40 pt-5">
+        <span class="font-mono text-brass text-2xl font-semibold">04</span>
+        <h3 class="font-display font-semibold mt-2 mb-2">QA &amp; testing</h3>
+        <p class="text-slateline text-sm leading-relaxed">Functional, performance and security testing against the original spec.</p>
+      </li>
+      <li class="relative border-t-2 border-brass pt-5">
+        <span class="font-mono text-brass text-2xl font-semibold">05</span>
+        <h3 class="font-display font-semibold mt-2 mb-2">Launch &amp; support</h3>
+        <p class="text-slateline text-sm leading-relaxed">Guided go-live, documentation handover and an ongoing support window.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="work" class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-start">
+    <div class="reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-graphite mb-3">// Why DYNAMONEXOVRA</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl tracking-tight text-navy">Small-town roots, enterprise-grade delivery</h2>
+      <p class="mt-4 text-graphite text-base sm:text-lg leading-relaxed">
+        Based in Auraiya, Uttar Pradesh, we work with clients across India and abroad. Lower overheads mean sharper pricing — without cutting corners on engineering discipline, documentation or communication.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-navy text-paper font-mono text-sm uppercase tracking-wider font-semibold px-6 py-3.5 rounded-sm hover:bg-navy-mid transition-all hover:-translate-y-0.5">
+          Talk to our team
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal-stagger grid sm:grid-cols-2 gap-5">
+      <div class="lift-card border border-navy/10 bg-white rounded-sm p-6">
+        <h3 class="font-display font-semibold text-navy mb-2">Direct access to engineers</h3>
+        <p class="text-graphite text-sm leading-relaxed">No account-manager layers. You speak with the people writing your code.</p>
+      </div>
+      <div class="lift-card border border-navy/10 bg-white rounded-sm p-6">
+        <h3 class="font-display font-semibold text-navy mb-2">Fixed-scope quoting</h3>
+        <p class="text-graphite text-sm leading-relaxed">Written estimates before work begins, with change requests tracked separately.</p>
+      </div>
+      <div class="lift-card border border-navy/10 bg-white rounded-sm p-6">
+        <h3 class="font-display font-semibold text-navy mb-2">Documentation as standard</h3>
+        <p class="text-graphite text-sm leading-relaxed">Every project ships with architecture notes and a handover guide, not tribal knowledge.</p>
+      </div>
+      <div class="lift-card border border-navy/10 bg-white rounded-sm p-6">
+        <h3 class="font-display font-semibold text-navy mb-2">Post-launch support window</h3>
+        <p class="text-graphite text-sm leading-relaxed">A defined support period is built into every contract, not sold as an afterthought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH STACK ============ -->
+<section id="stack" class="py-16 md:py-20 bg-navy-deep border-y border-white/5 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 mb-8">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-cyan text-center">// Tools we build with</p>
+  </div>
+  <div class="relative">
+    <div class="flex w-max marquee-track gap-14 font-display text-xl sm:text-2xl text-slateline/70 px-7">
+      <span class="flex gap-14">
+        <span>React</span><span>Node.js</span><span>Next.js</span><span>Python</span><span>Django</span>
+        <span>Flutter</span><span>PostgreSQL</span><span>MongoDB</span><span>AWS</span><span>Docker</span>
+        <span>Kubernetes</span><span>TypeScript</span>
+      </span>
+      <span class="flex gap-14" aria-hidden="true">
+        <span>React</span><span>Node.js</span><span>Next.js</span><span>Python</span><span>Django</span>
+        <span>Flutter</span><span>PostgreSQL</span><span>MongoDB</span><span>AWS</span><span>Docker</span>
+        <span>Kubernetes</span><span>TypeScript</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="reveal max-w-2xl mb-12">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-graphite mb-3">// Client notes</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl tracking-tight text-navy">What clients say</h2>
+    </div>
+
+    <div class="reveal relative bg-navy text-paper rounded-sm p-8 sm:p-12 max-w-3xl mx-auto overflow-hidden">
+      <svg class="absolute -top-4 -left-2 opacity-20" width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M4 10c0-3 2-5 5-5v2c-1.7 0-3 1.3-3 3v1h3v6H4v-7Zm9 0c0-3 2-5 5-5v2c-1.7 0-3 1.3-3 3v1h3v6h-5v-7Z" fill="#D4A24C"/></svg>
+      <div id="testimonial-track" class="relative min-h-[9rem]">
+        <blockquote class="testimonial-slide" data-index="0">
+          <p class="text-lg sm:text-xl leading-relaxed font-display">"They scoped our inventory system properly before writing a single line — the first vendor we'd worked with who did that. Deployment was smooth and support has actually been responsive."</p>
+          <footer class="mt-6 font-mono text-sm text-cyan">— Ritika Sharma, Operations Head, regional retail chain</footer>
+        </blockquote>
+        <blockquote class="testimonial-slide hidden" data-index="1">
+          <p class="text-lg sm:text-xl leading-relaxed font-display">"Our booking app needed to work on patchy rural networks. The team designed around that constraint instead of ignoring it. It hasn't gone down once since launch."</p>
+          <footer class="mt-6 font-mono text-sm text-cyan">— Arvind Pandey, Founder, agri-services startup</footer>
+        </blockquote>
+        <blockquote class="testimonial-slide hidden" data-index="2">
+          <p class="text-lg sm:text-xl leading-relaxed font-display">"Clear weekly updates, a fixed quote that didn't move, and documentation we could actually hand to our in-house team afterward. Exactly what we needed."</p>
+          <footer class="mt-6 font-mono text-sm text-cyan">— Meenal Tiwari, IT Manager, education services group</footer>
+        </blockquote>
+      </div>
+      <div class="flex gap-2 mt-8" role="tablist" aria-label="Testimonials">
+        <button class="testi-dot w-8 h-1.5 rounded-full bg-brass" data-go="0" aria-label="Testimonial 1" aria-selected="true"></button>
+        <button class="testi-dot w-8 h-1.5 rounded-full bg-white/20" data-go="1" aria-label="Testimonial 2" aria-selected="false"></button>
+        <button class="testi-dot w-8 h-1.5 rounded-full bg-white/20" data-go="2" aria-label="Testimonial 3" aria-selected="false"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-20 md:py-28 bg-navy text-paper relative overflow-hidden blueprint-grid">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 relative">
+    <div class="reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-cyan mb-3">// Get in touch</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl tracking-tight mb-6">Tell us what you're building</h2>
+      <p class="text-slateline mb-10 max-w-md leading-relaxed">Share a brief and we'll respond with next steps within one business day.</p>
+
+      <form id="contact-form" class="space-y-5" novalidate>
+        <div>
+          <label for="name" class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2">Full name</label>
+          <input id="name" name="name" type="text" required class="w-full bg-white/5 border border-white/15 rounded-sm px-4 py-3 text-paper placeholder:text-slateline/50 outline-none" placeholder="Your name" />
+          <p class="error-msg hidden text-brass text-xs font-mono mt-1">Please enter your name.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="email" class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2">Email</label>
+            <input id="email" name="email" type="email" required class="w-full bg-white/5 border border-white/15 rounded-sm px-4 py-3 text-paper placeholder:text-slateline/50 outline-none" placeholder="you@company.com" />
+            <p class="error-msg hidden text-brass text-xs font-mono mt-1">Please enter a valid email.</p>
+          </div>
+          <div>
+            <label for="phone" class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" class="w-full bg-white/5 border border-white/15 rounded-sm px-4 py-3 text-paper placeholder:text-slateline/50 outline-none" placeholder="+91 00000 00000" />
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2">Project brief</label>
+          <textarea id="message" name="message" rows="4" required class="w-full bg-white/5 border border-white/15 rounded-sm px-4 py-3 text-paper placeholder:text-slateline/50 outline-none resize-none" placeholder="What are you looking to build?"></textarea>
+          <p class="error-msg hidden text-brass text-xs font-mono mt-1">Please add a short project brief.</p>
+        </div>
+
+        <button type="submit" id="submit-btn" class="relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brass text-navy font-mono text-sm uppercase tracking-wider font-semibold px-7 py-3.5 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brass/20">
+          <span id="submit-label">Send brief</span>
+          <span id="submit-bar" class="absolute left-0 bottom-0 h-0.5 bg-navy/40 w-0"></span>
+        </button>
+        <p id="form-success" role="status" class="hidden text-cyan font-mono text-sm mt-3">Thanks — your brief has been noted. We'll be in touch within one business day.</p>
+      </form>
+    </div>
+
+    <div class="reveal space-y-6">
+      <div class="border border-white/15 rounded-sm p-6 bg-white/5">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-cyan mb-4">Registered office</h3>
+        <address class="not-italic font-display text-lg leading-relaxed">
+          DYNAMONEXOVRA TECHNOLOGY<br/>
+          182 Bheekhampur, Auraiya<br/>
+          Uttar Pradesh — 206122, India
+        </address>
+        <div class="mt-5 flex flex-wrap gap-4 font-mono text-sm text-slateline">
+          <span class="flex items-center gap-2"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 3h11v9H2V3Z" stroke="#6FD3E0" stroke-width="1.2"/><path d="M2 4l5.5 4L13 4" stroke="#6FD3E0" stroke-width="1.2"/></svg> contact@dynamonexovra.tech</span>
+          <span class="flex items-center gap-2"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 2c1 3 2 5 4 6l1.2-1.5c.2-.2.5-.3.8-.2 1 .3 2 .5 3 .5.6 0 1 .4 1 1V11c0 .6-.4 1-1 1C7 12 3 8 3 3c0-.6.4-1 1-1h1Z" stroke="#6FD3E0" stroke-width="1.2"/></svg> +91 000 000 0000</span>
+        </div>
+        <p class="font-mono text-[11px] text-slateline/70 mt-4">*Sample registration credentials — replace with your MSME / GST / Startup India reference numbers.</p>
+      </div>
+
+      <div class="rounded-sm overflow-hidden border border-white/15 h-64">
+        <iframe
+          title="Map showing 182 Bheekhampur, Auraiya, Uttar Pradesh"
+          src="https://maps.google.com/maps?q=Bheekhampur%2C%20Auraiya%2C%20Uttar%20Pradesh%20206122&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full grayscale-[30%] contrast-125"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-navy-deep text-slateline border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <p class="font-display font-semibold text-paper text-lg mb-3">DYNAMONEXOVRA<span class="text-brass">.</span></p>
+      <p class="text-sm leading-relaxed max-w-xs">A registered software development company headquartered in Auraiya, Uttar Pradesh, delivering engineering-grade digital products.</p>
+    </div>
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-widest text-cyan mb-4">Company</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#services" class="hover:text-paper transition-colors">Services</a></li>
+        <li><a href="#process" class="hover:text-paper transition-colors">Process</a></li>
+        <li><a href="#work" class="hover:text-paper transition-colors">Why us</a></li>
+        <li><a href="#testimonials" class="hover:text-paper transition-colors">Clients</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-widest text-cyan mb-4">Legal</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Terms of service</li>
+        <li>Privacy policy</li>
+        <li>MSME / GST reference*</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-mono text-xs uppercase tracking-widest text-cyan mb-4">Registered office</h4>
+      <address class="not-italic text-sm leading-relaxed">
+        182 Bheekhampur, Auraiya<br/>Uttar Pradesh — 206122<br/>India
+      </address>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6 px-5 sm:px-8 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+    <p>© <span id="year"></span> DYNAMONEXOVRA TECHNOLOGY. All rights reserved.</p>
+    <p class="text-slateline/70">Doc. DX-2026-001 · Rev. A · Auraiya, Uttar Pradesh</p>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brass text-navy flex items-center justify-center opacity-0 pointer-events-none translate-y-3 shadow-lg">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  let menuIsOpen = false;
+  menuToggle.addEventListener('click', () => {
+    menuIsOpen = !menuIsOpen;
+    menuToggle.setAttribute('aria-expanded', String(menuIsOpen));
+    if (menuIsOpen) {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    } else {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menuIsOpen = false;
+    mobileMenu.style.maxHeight = '0px';
+    mobileMenu.style.opacity = '0';
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Sticky header shrink
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('shadow-lg', 'shadow-black/20');
+    } else {
+      header.classList.remove('shadow-lg', 'shadow-black/20');
+    }
+    // back to top visibility
+    const btn = document.getElementById('back-to-top');
+    if (window.scrollY > 500) {
+      btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+    } else {
+      btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+    }
+  }, { passive: true });
+
+  document.getElementById('back-to-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Counter animation
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // Testimonial carousel
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testi-dot');
+  let current = 0;
+  function showSlide(i) {
+    slides.forEach((s, idx) => s.classList.toggle('hidden', idx !== i));
+    dots.forEach((d, idx) => {
+      d.classList.toggle('bg-brass', idx === i);
+      d.classList.toggle('bg-white/20', idx !== i);
+      d.setAttribute('aria-selected', String(idx === i));
+    });
+    current = i;
+  }
+  dots.forEach(dot => dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.go, 10))));
+  let autoRotate = setInterval(() => showSlide((current + 1) % slides.length), 6000);
+  document.getElementById('testimonial-track').addEventListener('mouseenter', () => clearInterval(autoRotate));
+
+  // Contact form validation
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitLabel = document.getElementById('submit-label');
+  const submitBar = document.getElementById('submit-bar');
+  const successMsg = document.getElementById('form-success');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+      const errorEl = field.parentElement.querySelector('.error-msg');
+      let fieldValid = field.value.trim().length > 1;
+      if (field.type === 'email') {
+        fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+      }
+      if (!fieldValid) {
+        valid = false;
+        field.classList.add('border-brass');
+        if (errorEl) errorEl.classList.remove('hidden');
+      } else {
+        field.classList.remove('border-brass');
+        if (errorEl) errorEl.classList.add('hidden');
+      }
+    });
+
+    if (!valid) return;
+
+    submitLabel.textContent = 'Sending…';
+    submitBtn.disabled = true;
+    submitBar.style.transition = 'width 1s ease';
+    submitBar.style.width = '100%';
+
+    setTimeout(() => {
+      submitLabel.textContent = 'Send brief';
+      submitBtn.disabled = false;
+      submitBar.style.transition = 'none';
+      submitBar.style.width = '0%';
+      successMsg.classList.remove('hidden');
+      form.reset();
+    }, 1100);
+  });
+</script>
+
+</body>
+</html>
