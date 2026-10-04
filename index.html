@@ -3,341 +3,1330 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DYNAMONEXOVRA TECHNOLOGY Consult — Tech Talent &amp; App Development</title>
+    <title>
+      DYNAMONEXOVRA TECHNOLOGY Consult — Tech Talent &amp; App Development
+    </title>
     <meta
       name="description"
       content="DynamoIntellect Consult provides elite tech talent consulting and custom app development. 48-hour shortlisting, global talent network, flexible engagement models."
     />
     <link rel="shortcut icon" href="./dynamointellect_logo.jpeg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              navy: { DEFAULT: "#0E2233", deep: "#0A1B29", mid: "#132C41" },
-              cyan: { DEFAULT: "#6FD3E0", dim: "#3E7C8A" },
-              brass: { DEFAULT: "#D4A24C", light: "#E8C079" },
-              paper: "#F4F1E8",
-              ink: "#16202B",
-              slateline: "#9FB4C2",
-              graphite: "#57626B",
-            },
-            fontFamily: {
-              display: ['"Space Grotesk"', "sans-serif"],
-              body: ['"IBM Plex Sans"', "sans-serif"],
-              mono: ['"IBM Plex Mono"', "monospace"],
-            },
-          },
-        },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer components {
-        .wrap {
-          @apply max-w-7xl mx-auto px-5 sm:px-8;
-        }
-        .kick {
-          @apply font-mono text-xs uppercase tracking-[0.3em] mb-3;
-        }
-        .h2 {
-          @apply font-display font-semibold text-3xl sm:text-4xl tracking-tight;
-        }
-        .card {
-          @apply bg-white border border-navy/10 rounded-sm p-7;
-        }
-        .btn {
-          @apply inline-flex items-center justify-center gap-2 bg-brass text-navy font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold px-6 py-3.5 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brass/20;
-        }
-        .btn-o {
-          @apply inline-flex items-center justify-center border border-cyan/30 text-paper font-mono text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-sm hover:border-cyan hover:bg-white/5 transition-all;
-        }
-        .tag {
-          @apply font-mono text-[11px] uppercase tracking-widest text-brass;
-        }
-        .fld {
-          @apply w-full bg-white/5 border border-white/15 rounded-sm px-4 py-3 text-paper outline-none placeholder:text-slateline/50;
-        }
-      }
-    </style>
     <style>
+      :root {
+        --blue: #1f4fd8;
+        --blue-dark: #0f2a75;
+        --blue-soft: #eef3ff;
+        --sky: #f6f9ff;
+        --text: #1c2433;
+        --muted: #617089;
+        --line: #e4e9f2;
+        --white: #fff;
+        --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 84px;
       }
       body {
-        font-family: "IBM Plex Sans", sans-serif;
-        background: #f4f1e8;
-        color: #16202b;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fff;
+        color: var(--text);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul,
+      ol {
+        list-style: none;
       }
       ::selection {
-        background: #d4a24c;
-        color: #0e2233;
+        background: var(--blue);
+        color: #fff;
       }
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      textarea:focus-visible {
-        outline: 2px solid #d4a24c;
+      :focus-visible {
+        outline: 2px solid var(--blue);
         outline-offset: 3px;
-        border-radius: 2px;
       }
-      .blueprint-grid {
-        background-image:
-          linear-gradient(rgba(111, 211, 224, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(111, 211, 224, 0.08) 1px, transparent 1px);
-        background-size: 32px 32px;
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
       }
-      .blueprint-grid-lg {
-        background-image:
-          linear-gradient(rgba(111, 211, 224, 0.14) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(111, 211, 224, 0.14) 1px, transparent 1px);
-        background-size: 160px 160px;
+      .skip {
+        position: absolute;
+        left: -999px;
+        top: 8px;
+        background: var(--blue);
+        color: #fff;
+        padding: 8px 14px;
+        z-index: 200;
+        border-radius: 6px;
       }
-      .circuit-path {
-        stroke-dasharray: 1400;
-        stroke-dashoffset: 1400;
-        animation: draw 3.2s ease-out forwards;
+      .skip:focus {
+        left: 8px;
       }
-      .circuit-path.d2 {
-        animation-delay: 0.3s;
+      section {
+        padding: 100px 0;
       }
-      .circuit-path.d3 {
-        animation-delay: 0.6s;
+      h1,
+      h2,
+      h3,
+      h4 {
+        line-height: 1.2;
+        color: var(--blue-dark);
       }
-      @keyframes draw {
-        to {
-          stroke-dashoffset: 0;
-        }
+      h2 {
+        font-size: clamp(28px, 4vw, 40px);
+        letter-spacing: -0.01em;
       }
-      .node-pulse {
-        animation: pn 2.6s ease-in-out infinite;
+      .head {
+        max-width: 680px;
       }
-      @keyframes pn {
-        0%,
-        100% {
-          opacity: 0.35;
-        }
-        50% {
-          opacity: 1;
-        }
+      .head.c {
+        margin: 0 auto;
+        text-align: center;
       }
-      .stamp {
-        animation: sf 7s ease-in-out infinite;
+      .kick {
+        display: inline-block;
+        background: var(--blue-soft);
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 7px 14px;
+        border-radius: 30px;
+        margin-bottom: 16px;
       }
-      @keyframes sf {
-        0%,
-        100% {
-          transform: rotate(-3deg) translateY(0);
-        }
-        50% {
-          transform: rotate(-3deg) translateY(-6px);
-        }
+      .lead {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 17px;
       }
-      .reveal {
+
+      /* Buttons */
+      .btn,
+      .btn-o {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 50px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.35s var(--ease);
+      }
+      .btn {
+        background: var(--blue);
+        color: #fff;
+        box-shadow: 0 10px 24px -10px rgba(31, 79, 216, 0.7);
+      }
+      .btn:hover {
+        background: var(--blue-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 18px 30px -12px rgba(15, 42, 117, 0.7);
+      }
+      .btn-o {
+        border-color: var(--blue);
+        color: var(--blue);
+        background: #fff;
+      }
+      .btn-o:hover {
+        background: var(--blue);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+      .btn svg {
+        transition: transform 0.3s var(--ease);
+      }
+      .btn:hover svg {
+        transform: translateX(5px);
+      }
+      .btn.sm,
+      .btn-o.sm {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      .btn.w {
+        background: #fff;
+        color: var(--blue-dark);
+        box-shadow: none;
+      }
+      .btn.w:hover {
+        background: var(--blue-soft);
+      }
+
+      /* Header */
+      header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid transparent;
+        transition:
+          box-shadow 0.3s,
+          border-color 0.3s;
+      }
+      header.scrolled {
+        box-shadow: 0 8px 28px -14px rgba(15, 42, 117, 0.35);
+        border-color: var(--line);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 76px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+      .brand b {
+        display: block;
+        font-size: 16px;
+        color: var(--blue-dark);
+        letter-spacing: 0.02em;
+      }
+      .brand b i {
+        color: var(--blue);
+        font-style: normal;
+      }
+      .brand small {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 0.35em;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+      nav.primary {
+        display: flex;
+        gap: 6px;
+      }
+      nav.primary a {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--muted);
+        padding: 9px 14px;
+        border-radius: 30px;
+        transition: all 0.3s;
+      }
+      nav.primary a:hover,
+      nav.primary a.active {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      #menu-toggle {
+        display: none;
+        background: var(--blue-soft);
+        border: 0;
+        color: var(--blue);
+        cursor: pointer;
+        padding: 9px;
+        border-radius: 10px;
+      }
+      #mobile-menu {
+        display: none;
+        overflow: hidden;
+        max-height: 0;
         opacity: 0;
-        transform: translateY(24px);
+        background: #fff;
         transition:
-          opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
-          transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+          max-height 0.45s var(--ease),
+          opacity 0.35s;
       }
-      .reveal.in-view {
-        opacity: 1;
-        transform: none;
+      #mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        padding: 6px 24px 22px;
       }
-      .card {
+      #mobile-menu a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        font-weight: 700;
+        color: var(--blue-dark);
+      }
+      #mobile-menu .btn {
+        margin-top: 16px;
+        color: #fff;
+        border: 0;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        padding: 160px 0 0;
+        background: linear-gradient(180deg, var(--sky), #fff 85%);
+        overflow: hidden;
+        text-align: center;
+      }
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.55;
+        animation: drift 16s ease-in-out infinite;
+      }
+      .blob.a {
+        width: 420px;
+        height: 420px;
+        background: #cfe0ff;
+        left: -120px;
+        top: 40px;
+      }
+      .blob.b {
+        width: 360px;
+        height: 360px;
+        background: #dfe9ff;
+        right: -100px;
+        top: 120px;
+        animation-delay: -7s;
+      }
+      @keyframes drift {
+        50% {
+          transform: translate(40px, 30px) scale(1.1);
+        }
+      }
+      .hero .in {
+        position: relative;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        border: 1px solid var(--line);
+        padding: 8px 18px;
+        border-radius: 40px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue);
+        box-shadow: 0 8px 20px -14px rgba(15, 42, 117, 0.5);
+      }
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #22b573;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(34, 181, 115, 0.55);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(34, 181, 115, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 181, 115, 0);
+        }
+      }
+      .hero h1 {
+        margin-top: 24px;
+        font-size: clamp(38px, 6vw, 68px);
+        letter-spacing: -0.025em;
+        line-height: 1.08;
+      }
+      .hero h1 span {
+        color: var(--blue);
+        background: linear-gradient(transparent 82%, #cfe0ff 82%);
+      }
+      .hero p.sub {
+        margin: 24px auto 0;
+        font-size: 18px;
+        color: var(--muted);
+        max-width: 700px;
+      }
+      .cta {
+        margin-top: 34px;
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .anim {
+        opacity: 0;
+        transform: translateY(26px);
+        animation: rise 0.9s var(--ease) forwards;
+      }
+      .d1 {
+        animation-delay: 0.05s;
+      }
+      .d2 {
+        animation-delay: 0.2s;
+      }
+      .d3 {
+        animation-delay: 0.35s;
+      }
+      .d4 {
+        animation-delay: 0.5s;
+      }
+      .d5 {
+        animation-delay: 0.65s;
+      }
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .stats {
+        position: relative;
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        transform: translateY(50px);
+      }
+      .stat {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 26px 20px;
+        box-shadow: 0 24px 40px -28px rgba(15, 42, 117, 0.5);
         transition:
-          transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
-          box-shadow 0.35s ease,
-          border-color 0.35s ease;
+          transform 0.4s var(--ease),
+          box-shadow 0.4s;
       }
-      .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 24px 48px -20px rgba(14, 34, 51, 0.35);
-        border-color: #d4a24c;
+      .stat:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 34px 50px -26px rgba(15, 42, 117, 0.55);
       }
-      .nav-link {
+      .stat .v {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--blue);
+      }
+      .stat .l {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+      .stats-wrap {
+        padding-bottom: 0;
+      }
+
+      /* Chips */
+      .chips {
+        padding: 110px 0 0;
+      }
+      .chips .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+      .chips span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 10px 20px;
+        border-radius: 40px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue-dark);
+        transition: all 0.3s;
+      }
+      .chips span::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--blue);
+      }
+      .chips span:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+        transform: translateY(-3px);
+      }
+      .chips span:hover::before {
+        background: #fff;
+      }
+
+      /* Industries */
+      .ind {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .tile {
+        position: relative;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 34px 28px;
+        overflow: hidden;
+        transition: all 0.4s var(--ease);
+      }
+      .tile .no {
+        position: absolute;
+        right: 18px;
+        top: 6px;
+        font-size: 68px;
+        font-weight: 700;
+        color: var(--blue-soft);
+        line-height: 1;
+        transition:
+          color 0.4s,
+          transform 0.5s var(--ease);
+      }
+      .tile .tg {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--blue);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         position: relative;
       }
-      .nav-link::after {
+      .tile h3 {
+        margin-top: 10px;
+        font-size: 19px;
+        position: relative;
+        max-width: 85%;
+        transition: color 0.4s;
+      }
+      .tile:hover {
+        background: var(--blue);
+        border-color: var(--blue);
+        transform: translateY(-8px);
+        box-shadow: 0 28px 40px -24px rgba(31, 79, 216, 0.8);
+      }
+      .tile:hover h3,
+      .tile:hover .tg {
+        color: #fff;
+      }
+      .tile:hover .no {
+        color: rgba(255, 255, 255, 0.18);
+        transform: scale(1.12);
+      }
+
+      /* Openings */
+      .open {
+        margin-top: 34px;
+        background: var(--sky);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 36px;
+        align-items: center;
+      }
+      .open h3 {
+        font-size: 26px;
+      }
+      .open .jobs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .job {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 26px;
+        transition: all 0.4s var(--ease);
+      }
+      .job:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 36px -24px rgba(15, 42, 117, 0.5);
+        border-color: var(--blue);
+      }
+      .job .tg {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--blue);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .job h4 {
+        font-size: 18px;
+        margin: 6px 0 4px;
+      }
+      .job p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .job .btn {
+        margin-top: 18px;
+      }
+
+      /* Onboard */
+      .onboard {
+        padding: 0 0 100px;
+      }
+      .banner {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, var(--blue-dark), var(--blue));
+        border-radius: 28px;
+        padding: 70px 48px;
+        text-align: center;
+        color: #fff;
+      }
+      .banner::before,
+      .banner::after {
         content: "";
         position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 0;
-        height: 2px;
-        background: #d4a24c;
-        transition: width 0.3s;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: drift 14s ease-in-out infinite;
       }
-      .nav-link:hover::after {
-        width: 100%;
+      .banner::before {
+        width: 340px;
+        height: 340px;
+        right: -90px;
+        top: -120px;
       }
-      .marquee-track {
+      .banner::after {
+        width: 240px;
+        height: 240px;
+        left: -70px;
+        bottom: -110px;
+        animation-delay: -5s;
+      }
+      .banner h2 {
+        color: #fff;
+        position: relative;
+      }
+      .banner .lead {
+        color: #d6e2ff;
+        position: relative;
+      }
+      .banner .pills {
+        position: relative;
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+      .banner .pills span {
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 10px 22px;
+        border-radius: 40px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all 0.3s;
+      }
+      .banner .pills span:hover {
+        background: #fff;
+        color: var(--blue-dark);
+      }
+      .banner .cols {
+        position: relative;
+        margin: 40px auto 0;
+        max-width: 640px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        text-align: left;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+      }
+      .banner .cols p {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #b9ceff;
+        margin-bottom: 4px;
+      }
+      .banner .cols a {
+        font-weight: 700;
+        word-break: break-all;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+      }
+      .banner .cols a:hover {
+        border-color: #fff;
+      }
+
+      /* Services */
+      .svc {
+        margin-top: 54px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 36px 30px;
+        transition: all 0.4s var(--ease);
+        position: relative;
+      }
+      .card .ic {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        background: var(--blue-soft);
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        margin-bottom: 22px;
+        transition: all 0.4s var(--ease);
+      }
+      .card .tg {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .card h3 {
+        font-size: 21px;
+        margin: 6px 0 12px;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .card .meta {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px dashed var(--line);
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue-dark);
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 34px 50px -30px rgba(15, 42, 117, 0.55);
+        border-color: var(--blue);
+      }
+      .card:hover .ic {
+        background: var(--blue);
+        color: #fff;
+        transform: rotate(-8deg) scale(1.08);
+      }
+
+      /* Why */
+      .why {
+        background: var(--sky);
+      }
+      .why .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-block;
+        margin-top: 26px;
+        background: #fff;
+        border: 1px solid var(--line);
+        color: var(--blue-dark);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 12px 20px;
+        border-radius: 40px;
+        box-shadow: 0 10px 24px -18px rgba(15, 42, 117, 0.6);
+      }
+      .feat {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .feat div {
+        background: #fff;
+        border-radius: 16px;
+        padding: 26px;
+        border-left: 4px solid var(--blue);
+        box-shadow: 0 18px 30px -26px rgba(15, 42, 117, 0.5);
+        transition: all 0.4s var(--ease);
+      }
+      .feat div:hover {
+        transform: translateY(-6px) translateX(3px);
+        box-shadow: 0 28px 40px -26px rgba(15, 42, 117, 0.55);
+      }
+      .feat h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+      .feat p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Trusted */
+      .trusted {
+        padding: 70px 0;
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .trusted p.t {
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .marq {
+        margin-top: 30px;
+        display: flex;
+        width: max-content;
         animation: mq 30s linear infinite;
       }
-      .marquee-track:hover {
+      .marq:hover {
         animation-play-state: paused;
+      }
+      .marq div {
+        display: flex;
+        gap: 64px;
+        padding-right: 64px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #b5bfd3;
+      }
+      .marq span {
+        transition: color 0.3s;
+      }
+      .marq span:hover {
+        color: var(--blue);
       }
       @keyframes mq {
         to {
           transform: translateX(-50%);
         }
       }
-      #mobile-menu {
-        transition:
-          max-height 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
-          opacity 0.35s;
+
+      /* Process */
+      .tl {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        position: relative;
       }
-      #back-to-top {
-        transition:
-          opacity 0.35s,
-          transform 0.35s;
+      .tl::before {
+        content: "";
+        position: absolute;
+        top: 34px;
+        left: 16%;
+        right: 16%;
+        height: 3px;
+        background: var(--line);
+        border-radius: 3px;
       }
-      .cursor-blink {
-        animation: bl 1.1s step-start infinite;
+      .tl::after {
+        content: "";
+        position: absolute;
+        top: 34px;
+        left: 16%;
+        height: 3px;
+        width: 0;
+        background: var(--blue);
+        border-radius: 3px;
+        transition: width 1.6s var(--ease) 0.3s;
       }
-      @keyframes bl {
-        50% {
-          opacity: 0;
-        }
+      .tl.in::after {
+        width: 68%;
       }
-      .status-dot {
-        animation: dp 2s infinite;
+      .st {
+        position: relative;
+        text-align: center;
+        padding: 0 10px;
       }
-      @keyframes dp {
-        0% {
-          box-shadow: 0 0 0 0 rgba(111, 211, 224, 0.55);
-        }
-        70% {
-          box-shadow: 0 0 0 8px rgba(111, 211, 224, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(111, 211, 224, 0);
-        }
+      .st .n {
+        position: relative;
+        z-index: 1;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid var(--blue);
+        color: var(--blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+        transition: all 0.4s var(--ease);
+      }
+      .st:hover .n {
+        background: var(--blue);
+        color: #fff;
+        transform: scale(1.12);
+      }
+      .st h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .st p {
+        color: var(--muted);
+        font-size: 15px;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      /* Testimonials */
+      .testi {
+        background: var(--blue-dark);
+        color: #fff;
+      }
+      .testi h2 {
+        color: #fff;
+      }
+      .testi .lead {
+        color: #c3d3fa;
+      }
+      .testi .kick {
+        background: rgba(255, 255, 255, 0.12);
+        color: #cfe0ff;
+      }
+      .tg3 {
+        margin-top: 54px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .q {
+        background: #fff;
+        color: var(--text);
+        border-radius: 20px;
+        padding: 34px 30px;
+        position: relative;
+        transition: all 0.4s var(--ease);
+        display: flex;
+        flex-direction: column;
+      }
+      .q::before {
+        content: "\201C";
+        font-family: Georgia, serif;
+        font-size: 80px;
+        color: var(--blue-soft);
+        line-height: 0.6;
+        height: 34px;
+      }
+      .q:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 34px 50px -26px rgba(0, 0, 0, 0.6);
+      }
+      .q p {
+        font-size: 16px;
+        color: var(--blue-dark);
+        flex: 1;
+        margin-top: 8px;
+      }
+      .q footer {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--blue);
+      }
+
+      /* Contact */
+      .cgrid {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 30px;
+        align-items: stretch;
+      }
+      form {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 40px;
+        box-shadow: 0 34px 50px -36px rgba(15, 42, 117, 0.5);
+      }
+      .field {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue-dark);
+        margin-bottom: 8px;
       }
       input,
       textarea {
+        width: 100%;
+        font-family: inherit;
+        font-size: 15px;
+        padding: 14px 16px;
+        border: 1.5px solid var(--line);
+        border-radius: 12px;
+        background: var(--sky);
+        color: var(--text);
         transition:
           border-color 0.25s,
-          box-shadow 0.25s;
+          box-shadow 0.25s,
+          background 0.25s;
       }
       input:focus,
       textarea:focus {
-        border-color: #d4a24c;
-        box-shadow: 0 0 0 4px rgba(212, 162, 76, 0.15);
+        outline: none;
+        border-color: var(--blue);
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(31, 79, 216, 0.12);
       }
-      ::-webkit-scrollbar {
-        width: 10px;
+      textarea {
+        resize: none;
       }
-      ::-webkit-scrollbar-track {
-        background: #0e2233;
+      .err {
+        display: none;
+        color: #c0392b;
+        font-size: 12px;
+        margin-top: 6px;
       }
-      ::-webkit-scrollbar-thumb {
-        background: #3e7c8a;
-        border-radius: 6px;
+      .err.show {
+        display: block;
+        animation: fade 0.3s;
+      }
+      #form-success {
+        display: none;
+        margin-top: 16px;
+        color: #1b8a52;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      #form-success.show {
+        display: block;
+        animation: fade 0.4s;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      aside.info {
+        background: linear-gradient(160deg, var(--blue), var(--blue-dark));
+        color: #fff;
+        border-radius: 22px;
+        padding: 40px;
+      }
+      aside.info .t {
+        color: #d6e2ff;
+        margin-bottom: 28px;
+      }
+      aside.info li {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      aside.info li:last-child {
+        margin-bottom: 0;
+      }
+      aside.info .bx {
+        flex: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.4s var(--ease),
+          background 0.3s;
+      }
+      aside.info li:hover .bx {
+        transform: rotate(-8deg) scale(1.1);
+        background: rgba(255, 255, 255, 0.28);
+      }
+      aside.info h3 {
+        color: #b9ceff;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      aside.info li p {
+        font-size: 16px;
+        font-weight: 700;
+        word-break: break-all;
+      }
+
+      /* Footer */
+      footer.site {
+        background: #0a1a45;
+        color: #b8c5e6;
+      }
+      .fgrid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 48px;
+        padding: 70px 0 50px;
+      }
+      .fgrid h4 {
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      .fgrid p,
+      .fgrid li {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .fgrid .logo {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .fgrid .logo i {
+        color: #7fa4ff;
+        font-style: normal;
+      }
+      .fgrid li {
+        transition:
+          transform 0.3s,
+          color 0.3s;
+      }
+      .fgrid li:hover {
+        color: #fff;
+        transform: translateX(5px);
+      }
+      .fgrid strong {
+        color: #fff;
+      }
+      .soc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .soc a {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 7px 16px;
+        border-radius: 30px;
+        font-size: 13px;
+        transition: all 0.3s;
+      }
+      .soc a:hover {
+        background: #fff;
+        color: var(--blue-dark);
+        transform: translateY(-3px);
+      }
+      .copy {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 22px 0;
+        font-size: 13px;
+      }
+
+      #back-to-top {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 0;
+        background: var(--blue);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 12px 26px -8px rgba(31, 79, 216, 0.8);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(14px);
+        transition: all 0.35s var(--ease);
+        z-index: 90;
+      }
+      #back-to-top.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+      #back-to-top:hover {
+        background: var(--blue-dark);
+        transform: translateY(-4px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.8s var(--ease),
+          transform 0.8s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .ind .reveal:nth-child(3n + 2),
+      .svc .reveal:nth-child(2),
+      .tg3 .reveal:nth-child(2) {
+        transition-delay: 0.12s;
+      }
+      .ind .reveal:nth-child(3n),
+      .svc .reveal:nth-child(3),
+      .tg3 .reveal:nth-child(3) {
+        transition-delay: 0.24s;
+      }
+
+      @media (max-width: 1024px) {
+        nav.primary,
+        .actions .btn,
+        .actions .btn-o {
+          display: none;
+        }
+        #menu-toggle {
+          display: block;
+        }
+        #mobile-menu {
+          display: block;
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ind,
+        .svc,
+        .tg3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .open,
+        .why .wrap,
+        .cgrid {
+          grid-template-columns: 1fr;
+        }
+        .fgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 700px) {
+        section {
+          padding: 72px 0;
+        }
+        .hero {
+          padding-top: 130px;
+        }
+        .stats {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+        .ind,
+        .svc,
+        .tg3,
+        .feat,
+        .open .jobs,
+        .banner .cols,
+        .fgrid {
+          grid-template-columns: 1fr;
+        }
+        .tl {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .tl::before,
+        .tl::after {
+          display: none;
+        }
+        .banner {
+          padding: 52px 24px;
+        }
+        .open {
+          padding: 26px;
+        }
+        form,
+        aside.info {
+          padding: 26px;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
-        .circuit-path,
-        .node-pulse,
-        .stamp,
-        .marquee-track,
-        .status-dot,
-        .cursor-blink {
+        *,
+        *::before,
+        *::after {
           animation: none !important;
-        }
-        .circuit-path {
-          stroke-dashoffset: 0;
-        }
-        .reveal {
           transition: none !important;
+        }
+        .reveal,
+        .anim {
           opacity: 1 !important;
           transform: none !important;
+        }
+        .tl::after {
+          width: 68%;
         }
       }
     </style>
   </head>
-  <body class="bg-paper text-ink antialiased">
-    <a
-      href="#main"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-brass focus:text-navy focus:px-4 focus:py-2 focus:rounded font-mono text-sm"
-      >Skip to main content</a
-    >
+  <body>
+    <a href="#main" class="skip">Skip to main content</a>
 
     <!-- HEADER -->
-    <header
-      class="fixed top-0 inset-x-0 z-50 bg-navy/95 backdrop-blur border-b border-cyan/10"
-    >
-      <div class="wrap flex items-center justify-between h-16 md:h-20">
-        <a
-          href="#top"
-          class="flex items-center gap-3"
-          aria-label="DYNAMONEXOVRA Consult — home"
-        >
+    <header id="hdr">
+      <div class="wrap bar">
+        <a href="#top" class="brand" aria-label="DYNAMONEXOVRA Consult — home">
           <img
-            src="./dynamointellect_logo.jpeg"
+            src="./logo.jpeg"
             alt="DynamoIntellect Consult"
-            class="w-11 h-11 sm:w-12 sm:h-12 object-contain shrink-0"
           />
           <span
-            class="font-display font-semibold tracking-tight text-paper text-sm sm:text-base leading-none"
-            >DYNAMONEXOVRA<span class="text-brass">.</span
-            ><br class="hidden sm:block" /><span
-              class="text-[10px] sm:text-xs font-mono font-normal tracking-[0.25em] text-slateline"
-              >CONSULT</span
-            ></span
+            ><b>DYNAMONEXOVRA<i>.</i></b
+            ><small>CONSULT</small></span
           >
         </a>
-        <nav
-          class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-slateline"
-          aria-label="Primary"
-        >
-          <a
-            href="#industries"
-            class="nav-link hover:text-paper transition-colors"
-            >Industries</a
-          >
-          <a
-            href="#services"
-            class="nav-link hover:text-paper transition-colors"
-            >Services</a
-          >
-          <a href="#why-us" class="nav-link hover:text-paper transition-colors"
-            >Why Choose Us</a
-          >
-          <a href="#process" class="nav-link hover:text-paper transition-colors"
-            >Process</a
-          >
-          <a
-            href="#testimonials"
-            class="nav-link hover:text-paper transition-colors"
-            >Testimonials</a
-          >
-          <a href="#contact" class="nav-link hover:text-paper transition-colors"
-            >Contact</a
-          >
+        <nav class="primary" aria-label="Primary">
+          <a href="#industries">Industries</a>
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Choose Us</a>
+          <a href="#process">Process</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <div class="flex items-center gap-3">
-          <a
-            href="#contact"
-            class="hidden md:inline-flex border border-cyan/30 text-paper font-mono text-xs uppercase tracking-wider px-4 py-2.5 rounded-sm hover:border-cyan hover:bg-white/5 transition-all"
-            >Hire Talent</a
-          >
-          <a
-            href="#contact"
-            class="hidden sm:inline-flex bg-brass hover:bg-brass-light text-navy font-mono text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brass/20"
-            >Contact Us</a
-          >
+        <div class="actions">
+          <a href="#contact" class="btn-o sm">Hire Talent</a>
+          <a href="#contact" class="btn sm">Contact Us</a>
           <button
             id="menu-toggle"
-            class="lg:hidden text-paper p-2 -mr-2"
             aria-expanded="false"
             aria-controls="mobile-menu"
             aria-label="Toggle navigation menu"
@@ -362,7 +1351,7 @@
               height="24"
               viewBox="0 0 24 24"
               fill="none"
-              class="hidden"
+              style="display: none"
             >
               <path
                 d="M6 6l12 12M18 6L6 18"
@@ -374,246 +1363,155 @@
           </button>
         </div>
       </div>
-      <div
-        id="mobile-menu"
-        class="lg:hidden overflow-hidden max-h-0 opacity-0 bg-navy-deep border-t border-cyan/10"
-      >
-        <nav
-          class="flex flex-col px-6 py-4 font-mono text-sm uppercase tracking-wider text-slateline"
-          aria-label="Mobile"
-        >
-          <a
-            href="#industries"
-            class="py-3 border-b border-white/5 hover:text-brass"
-            >Industries</a
-          >
-          <a
-            href="#services"
-            class="py-3 border-b border-white/5 hover:text-brass"
-            >Services</a
-          >
-          <a
-            href="#why-us"
-            class="py-3 border-b border-white/5 hover:text-brass"
-            >Why Choose Us</a
-          >
-          <a
-            href="#process"
-            class="py-3 border-b border-white/5 hover:text-brass"
-            >Process</a
-          >
-          <a
-            href="#testimonials"
-            class="py-3 border-b border-white/5 hover:text-brass"
-            >Testimonials</a
-          >
-          <a href="#contact" class="py-3 hover:text-brass">Contact</a>
-          <a href="#contact" class="btn mt-3">Hire Talent</a>
+      <div id="mobile-menu">
+        <nav aria-label="Mobile">
+          <a href="#industries">Industries</a>
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Choose Us</a>
+          <a href="#process">Process</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn">Hire Talent</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
       <!-- HERO -->
-      <section
-        id="top"
-        class="relative bg-navy text-paper pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden blueprint-grid"
-      >
-        <svg
-          class="absolute inset-0 w-full h-full opacity-70 pointer-events-none"
-          viewBox="0 0 1200 700"
-          fill="none"
-          preserveAspectRatio="xMidYMid slice"
-          aria-hidden="true"
-        >
-          <path
-            class="circuit-path"
-            d="M0 120 H260 V220 H520 V90 H820"
-            stroke="#6FD3E0"
-            stroke-width="1.4"
-          />
-          <path
-            class="circuit-path d2"
-            d="M1200 500 H900 V380 H640 V540 H300"
-            stroke="#6FD3E0"
-            stroke-width="1.4"
-          />
-          <path
-            class="circuit-path d3"
-            d="M60 650 V430 H360 V300"
-            stroke="#3E7C8A"
-            stroke-width="1.2"
-          />
-          <circle cx="820" cy="90" r="3.5" fill="#D4A24C" class="node-pulse" />
-          <circle cx="300" cy="540" r="3.5" fill="#D4A24C" class="node-pulse" />
-          <circle cx="360" cy="300" r="3.5" fill="#D4A24C" class="node-pulse" />
-        </svg>
-        <div
-          class="wrap relative grid lg:grid-cols-[1.15fr,0.85fr] gap-14 items-center"
-        >
-          <div>
-            <p
-              class="font-mono text-xs sm:text-sm tracking-[0.3em] uppercase text-cyan mb-5 flex items-center gap-2"
+      <section id="top" class="hero">
+        <div class="blob a"></div>
+        <div class="blob b"></div>
+        <div class="wrap">
+          <div class="in">
+            <span class="pill anim d1"
+              ><span class="dot"></span>Elite Tech Talent</span
             >
-              <span class="w-2 h-2 rounded-full bg-cyan status-dot"></span>Elite
-              Tech Talent<span class="cursor-blink">_</span>
-            </p>
-            <h1
-              class="font-display font-semibold text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight"
-            >
-              Build Your Vision.<br class="hidden sm:block" />
-              <span class="text-brass">Hire Your Future.</span>
+            <h1 class="anim d2">
+              Build Your Vision.<br /><span>Hire Your Future.</span>
             </h1>
-            <p
-              class="mt-6 text-slateline text-base sm:text-lg max-w-xl leading-relaxed"
-            >
+            <p class="sub anim d3">
               DYNAMONEXOVRA Consult provides elite consulting solutions and
               bespoke app development to propel your business forward. We
               connect you with top-tier talent and build scalable, cutting-edge
               technology.
             </p>
-            <div class="mt-9 flex flex-col sm:flex-row gap-4">
+            <div class="cta anim d4">
               <a href="#contact" class="btn"
                 >Hire Talent
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"
                     stroke="currentColor"
-                    stroke-width="1.6"
+                    stroke-width="1.8"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   /></svg
               ></a>
               <a href="#contact" class="btn-o">Get a Quote</a>
             </div>
-            <p
-              class="mt-10 pt-6 border-t border-white/10 max-w-xl font-mono text-xs text-slateline leading-relaxed"
-            >
-              <strong class="text-paper">48-hour shortlisting</strong> &middot;
-              Global talent network &middot; Flexible engagement models
-            </p>
           </div>
-          <div class="relative hidden sm:flex justify-center lg:justify-end">
-            <div
-              class="stamp bg-paper text-ink w-72 sm:w-80 rounded-sm shadow-2xl shadow-black/40 border-2 border-navy p-5 font-mono text-xs -rotate-3"
-            >
-              <div
-                class="flex items-center justify-between border-b-2 border-navy pb-2 mb-3"
-              >
-                <span
-                  class="uppercase tracking-widest font-semibold text-[10px]"
-                  >Live talent pipeline</span
-                ><span
-                  class="w-6 h-6 rounded-full border-2 border-brass flex items-center justify-center text-brass font-bold text-[10px]"
-                  >DI</span
-                >
-              </div>
-              <p class="uppercase tracking-wider text-[10px] text-graphite">
-                Time-to-hire
-              </p>
-              <p class="font-display font-semibold text-2xl">&lt; 10 days</p>
-              <p class="text-[11px] mb-3">From brief to onboarding</p>
-              <p class="uppercase tracking-wider text-[10px] text-graphite">
-                Client satisfaction
-              </p>
-              <p class="font-display font-semibold text-2xl">4.9/5</p>
-              <p class="text-[11px]">Based on 120+ reviews</p>
-              <p
-                class="mt-3 pt-3 border-t border-dashed border-navy/30 text-[11px] leading-snug"
-              >
-                Trusted by <strong>fast-growing startups</strong> and modern
-                enterprises worldwide.
-              </p>
+          <div class="stats anim d5">
+            <div class="stat">
+              <p class="v">48 hrs</p>
+              <p class="l">Shortlisting</p>
+            </div>
+            <div class="stat">
+              <p class="v">&lt; 10 days</p>
+              <p class="l">Time-to-hire, brief to onboarding</p>
+            </div>
+            <div class="stat">
+              <p class="v">4.9/5</p>
+              <p class="l">Client satisfaction · 120+ reviews</p>
+            </div>
+            <div class="stat">
+              <p class="v">Global</p>
+              <p class="l">Talent network · flexible engagement models</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- TRUST STRIP -->
-      <section class="bg-navy-deep text-slateline border-t border-white/5">
-        <div
-          class="wrap py-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 font-mono text-[11px] uppercase tracking-widest"
-        >
+      <!-- CHIPS -->
+      <div class="chips">
+        <div class="wrap">
           <span>Contract / Temporary</span><span>Contract-to-hire</span
           ><span>Permanent Placement</span
           ><span>Secure NDAs &amp; IP protection</span>
         </div>
-      </section>
+      </div>
+      <p
+        class="wrap"
+        style="
+          text-align: center;
+          margin-top: 18px;
+          color: var(--muted);
+          font-size: 14px;
+        "
+      >
+        Trusted by
+        <strong style="color: var(--blue-dark)">fast-growing startups</strong>
+        and modern enterprises worldwide.
+      </p>
 
       <!-- INDUSTRIES -->
-      <section id="industries" class="py-20 md:py-28 bg-paper">
+      <section id="industries">
         <div class="wrap">
-          <div class="reveal max-w-2xl">
-            <p class="kick text-graphite">// Service areas</p>
-            <h2 class="h2 text-navy">Our Specialized Industries</h2>
-            <p class="mt-4 text-graphite text-base sm:text-lg leading-relaxed">
-              Consulting expertise across core sectors.
-            </p>
+          <div class="head c reveal">
+            <span class="kick">Service areas</span>
+            <h2>Our Specialized Industries</h2>
+            <p class="lead">Consulting expertise across core sectors.</p>
           </div>
-          <div class="mt-12 grid lg:grid-cols-2 gap-8 items-start">
-            <ul class="reveal grid sm:grid-cols-2 gap-4">
-              <li class="card !p-5">
-                <p class="tag">Industry 01</p>
-                <h3 class="font-display font-semibold text-navy mt-1">
-                  Manufacturing &amp; Engineering
-                </h3>
-              </li>
-              <li class="card !p-5">
-                <p class="tag">Industry 02</p>
-                <h3 class="font-display font-semibold text-navy mt-1">
-                  Transportation &amp; Logistics
-                </h3>
-              </li>
-              <li class="card !p-5">
-                <p class="tag">Industry 03</p>
-                <h3 class="font-display font-semibold text-navy mt-1">
-                  Civil &amp; Construction
-                </h3>
-              </li>
-              <li class="card !p-5">
-                <p class="tag">Industry 04</p>
-                <h3 class="font-display font-semibold text-navy mt-1">
-                  Legal &amp; Law Enforcement
-                </h3>
-              </li>
-              <li class="card !p-5">
-                <p class="tag">Industry 05</p>
-                <h3 class="font-display font-semibold text-navy mt-1">
-                  Healthcare &amp; Medical
-                </h3>
-              </li>
-              <li class="card !p-5 !border-brass">
-                <p class="tag">Industry 06</p>
-                <h3 class="font-display font-semibold text-navy mt-1">
-                  Information Technology
-                </h3>
-              </li>
-            </ul>
-            <div
-              class="reveal bg-navy text-paper rounded-sm p-7 blueprint-grid"
-            >
-              <h3
-                class="font-mono text-xs uppercase tracking-widest text-cyan mb-5"
-              >
-                Current openings
-              </h3>
-              <div
-                class="border border-white/15 bg-white/5 rounded-sm p-5 mb-4"
-              >
-                <p class="tag">Current opening</p>
-                <h4 class="font-display font-semibold text-lg mt-1">
-                  Software Developer
-                </h4>
-                <p class="text-slateline text-sm">Remote &bull; Full-time</p>
-                <a href="#contact" class="btn mt-4">Apply for this job</a>
+          <ul class="ind">
+            <li class="tile reveal">
+              <span class="no">01</span>
+              <p class="tg">Industry 01</p>
+              <h3>Manufacturing &amp; Engineering</h3>
+            </li>
+            <li class="tile reveal">
+              <span class="no">02</span>
+              <p class="tg">Industry 02</p>
+              <h3>Transportation &amp; Logistics</h3>
+            </li>
+            <li class="tile reveal">
+              <span class="no">03</span>
+              <p class="tg">Industry 03</p>
+              <h3>Civil &amp; Construction</h3>
+            </li>
+            <li class="tile reveal">
+              <span class="no">04</span>
+              <p class="tg">Industry 04</p>
+              <h3>Legal &amp; Law Enforcement</h3>
+            </li>
+            <li class="tile reveal">
+              <span class="no">05</span>
+              <p class="tg">Industry 05</p>
+              <h3>Healthcare &amp; Medical</h3>
+            </li>
+            <li class="tile reveal">
+              <span class="no">06</span>
+              <p class="tg">Industry 06</p>
+              <h3>Information Technology</h3>
+            </li>
+          </ul>
+          <div class="open reveal">
+            <div>
+              <h3>Current openings</h3>
+              <p class="lead" style="font-size: 15px">
+                Join our team and work on exciting projects.
+              </p>
+            </div>
+            <div class="jobs">
+              <div class="job">
+                <p class="tg">Current opening</p>
+                <h4>Software Developer</h4>
+                <p>Remote &bull; Full-time</p>
+                <a href="#contact" class="btn sm">Apply for this job</a>
               </div>
-              <div class="border border-white/15 bg-white/5 rounded-sm p-5">
-                <p class="tag">Current opening</p>
-                <h4 class="font-display font-semibold text-lg mt-1">
-                  Business Development Executive
-                </h4>
-                <p class="text-slateline text-sm">Onsite &bull; Full-time</p>
-                <a href="#contact" class="btn mt-4">Apply for this job</a>
+              <div class="job">
+                <p class="tg">Current opening</p>
+                <h4>Business Development Executive</h4>
+                <p>Onsite &bull; Full-time</p>
+                <a href="#contact" class="btn sm">Apply for this job</a>
               </div>
             </div>
           </div>
@@ -621,169 +1519,126 @@
       </section>
 
       <!-- ONBOARD -->
-      <section
-        class="py-16 md:py-20 bg-navy-deep text-paper border-y border-white/5"
-      >
-        <div class="wrap reveal text-center max-w-3xl">
-          <h2 class="h2">Onboard Remote Staff Quickly</h2>
-          <p class="mt-4 text-slateline text-base sm:text-lg">
-            Effortlessly tap into skilled remote talent with our simplified
-            hiring.
-          </p>
-          <div
-            class="mt-8 flex flex-wrap justify-center gap-3 font-mono text-xs uppercase tracking-wider"
-          >
-            <span class="border border-cyan/30 px-4 py-2 rounded-sm"
-              >Contract / Temporary</span
-            >
-            <span class="border border-cyan/30 px-4 py-2 rounded-sm"
-              >Permanent Placement</span
-            >
-          </div>
-          <div
-            class="mt-10 pt-8 border-t border-white/10 grid sm:grid-cols-2 gap-6 text-left"
-          >
-            <div>
-              <p
-                class="font-mono text-[11px] uppercase tracking-widest text-cyan mb-1"
-              >
-                Have a question?
-              </p>
-              <a
-                href="#faq"
-                class="text-paper hover:text-brass transition-colors"
-                >Explore our FAQ section</a
-              >
+      <section class="onboard">
+        <div class="wrap">
+          <div class="banner reveal">
+            <h2>Onboard Remote Staff Quickly</h2>
+            <p class="lead">
+              Effortlessly tap into skilled remote talent with our simplified
+              hiring.
+            </p>
+            <div class="pills">
+              <span>Contract / Temporary</span><span>Permanent Placement</span>
             </div>
-            <div>
-              <p
-                class="font-mono text-[11px] uppercase tracking-widest text-cyan mb-1"
-              >
-                Email us
-              </p>
-              <a
-                href="mailto:contact@dynamonexovra.com"
-                class="text-paper hover:text-brass transition-colors break-all"
-                >contact@dynamonexovra.com</a
-              >
+            <div class="cols">
+              <div>
+                <p>Have a question?</p>
+                <a href="#faq">Explore our FAQ section</a>
+              </div>
+              <div>
+                <p>Email us</p>
+                <a href="mailto:contact@dynamonexovra.com"
+                  >contact@dynamonexovra.com</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- SERVICES -->
-      <section id="services" class="py-20 md:py-28 bg-paper">
+      <section id="services" style="padding-top: 0">
         <div class="wrap">
-          <div class="reveal max-w-2xl">
-            <p class="kick text-graphite">// Services</p>
-            <h2 class="h2 text-navy">
-              Consulting &amp; App Development, Built Around You
-            </h2>
-            <p class="mt-4 text-graphite text-base sm:text-lg leading-relaxed">
+          <div class="head c reveal">
+            <span class="kick">Services</span>
+            <h2>Consulting &amp; App Development, Built Around You</h2>
+            <p class="lead">
               Whether you need a single specialist or a full product team, we
               provide flexible engagement models and end-to-end delivery for
               your digital roadmap.
             </p>
           </div>
-          <div class="reveal mt-12 grid md:grid-cols-3 gap-6">
-            <article class="card">
-              <p class="tag mb-1">01 / Talent</p>
-              <h3 class="font-display font-semibold text-lg text-navy mb-2">
-                Tech Talent Consulting
-              </h3>
-              <p class="text-graphite text-sm leading-relaxed">
+          <div class="svc">
+            <article class="card reveal">
+              <div class="ic">01</div>
+              <p class="tg">01 / Talent</p>
+              <h3>Tech Talent Consulting</h3>
+              <p>
                 Scale your engineering team with vetted developers, designers,
                 and product experts. We screen for skills, communication, and
                 culture fit so you get only the best.
               </p>
-              <p class="mt-4 font-mono text-xs text-navy">
+              <p class="meta">
                 Contract &bull; Contract-to-hire &bull; Full-time
               </p>
             </article>
-            <article class="card">
-              <p class="tag mb-1">02 / Apps</p>
-              <h3 class="font-display font-semibold text-lg text-navy mb-2">
-                Custom App Development
-              </h3>
-              <p class="text-graphite text-sm leading-relaxed">
+            <article class="card reveal">
+              <div class="ic">02</div>
+              <p class="tg">02 / Apps</p>
+              <h3>Custom App Development</h3>
+              <p>
                 From idea to launch, we build high-performing web and mobile
                 applications tailored to your users, workflows, and growth
                 ambitions.
               </p>
-              <p class="mt-4 font-mono text-xs text-navy">
+              <p class="meta">
                 Discovery &bull; Design &bull; Development &bull; Support
               </p>
             </article>
-            <article class="card">
-              <p class="tag mb-1">03 / Pods</p>
-              <h3 class="font-display font-semibold text-lg text-navy mb-2">
-                Product &amp; Delivery Pods
-              </h3>
-              <p class="text-graphite text-sm leading-relaxed">
+            <article class="card reveal">
+              <div class="ic">03</div>
+              <p class="tg">03 / Pods</p>
+              <h3>Product &amp; Delivery Pods</h3>
+              <p>
                 Spin up dedicated agile pods with product, design, and
                 engineering working in sync to ship features quickly and safely.
               </p>
-              <p class="mt-4 font-mono text-xs text-navy">
-                Ideal for scale-ups and busy teams
-              </p>
+              <p class="meta">Ideal for scale-ups and busy teams</p>
             </article>
           </div>
         </div>
       </section>
 
       <!-- WHY US -->
-      <section
-        id="why-us"
-        class="py-20 md:py-28 bg-navy text-paper blueprint-grid-lg"
-      >
-        <div class="wrap grid lg:grid-cols-2 gap-14 items-start">
+      <section id="why-us" class="why">
+        <div class="wrap">
           <div class="reveal">
-            <p class="kick text-cyan">// Why choose us</p>
-            <h2 class="h2">We Do More Than Fill Roles.</h2>
-            <p class="mt-4 text-slateline text-base sm:text-lg leading-relaxed">
+            <span class="kick">Why choose us</span>
+            <h2>We Do More Than Fill Roles.</h2>
+            <p class="lead">
               We partner with you to understand your roadmap, tech stack, and
               culture so every hire and every product decision pushes the
               business forward.
             </p>
-            <p
-              class="mt-6 inline-block border border-brass/60 text-brass font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-sm"
-            >
+            <p class="badge">
               3-stage vetting &bull; Live coding &bull; Soft skills screening
             </p>
           </div>
-          <div class="reveal grid sm:grid-cols-2 gap-5">
-            <div class="border border-white/15 bg-navy-mid/70 rounded-sm p-6">
-              <h3 class="font-display font-semibold mb-2">
-                Curated Talent Network
-              </h3>
-              <p class="text-slateline text-sm leading-relaxed">
+          <div class="feat reveal">
+            <div>
+              <h3>Curated Talent Network</h3>
+              <p>
                 We pre-vet engineers, designers, and product leaders so you
                 interview only the top 3–5%.
               </p>
             </div>
-            <div class="border border-white/15 bg-navy-mid/70 rounded-sm p-6">
-              <h3 class="font-display font-semibold mb-2">
-                Transparent Collaboration
-              </h3>
-              <p class="text-slateline text-sm leading-relaxed">
+            <div>
+              <h3>Transparent Collaboration</h3>
+              <p>
                 Weekly check-ins, clear SLAs, and shared delivery dashboards
                 keep everyone aligned.
               </p>
             </div>
-            <div class="border border-white/15 bg-navy-mid/70 rounded-sm p-6">
-              <h3 class="font-display font-semibold mb-2">
-                Scalable Engagement
-              </h3>
-              <p class="text-slateline text-sm leading-relaxed">
+            <div>
+              <h3>Scalable Engagement</h3>
+              <p>
                 Ramp up or down with flexible models that adapt to your runway
                 and roadmap.
               </p>
             </div>
-            <div class="border border-white/15 bg-navy-mid/70 rounded-sm p-6">
-              <h3 class="font-display font-semibold mb-2">
-                Security &amp; Compliance
-              </h3>
-              <p class="text-slateline text-sm leading-relaxed">
+            <div>
+              <h3>Security &amp; Compliance</h3>
+              <p>
                 Secure NDAs, robust IP protection, and modern DevSecOps
                 practices by default.
               </p>
@@ -793,74 +1648,54 @@
       </section>
 
       <!-- TRUSTED BY -->
-      <section
-        class="py-16 md:py-20 bg-navy-deep border-y border-white/5 overflow-hidden"
-      >
-        <div class="wrap mb-8">
-          <p class="kick text-cyan text-center">
-            // Trusted by industry-leading companies
-          </p>
-        </div>
-        <div
-          class="flex w-max marquee-track gap-14 font-display text-xl sm:text-2xl text-slateline/70 px-7"
-        >
-          <span class="flex gap-14"
-            ><span>ElevenLabs</span><span>Cohere</span><span>Perplexity</span
+      <section class="trusted">
+        <p class="t">Trusted by industry-leading companies</p>
+        <div class="marq">
+          <div>
+            <span>ElevenLabs</span><span>Cohere</span><span>Perplexity</span
             ><span>NVIDIA</span><span>Cartesia</span><span>OpenAI</span
-            ><span>Anthropic</span><span>DeepSeek</span></span
-          >
-          <span class="flex gap-14" aria-hidden="true"
-            ><span>ElevenLabs</span><span>Cohere</span><span>Perplexity</span
+            ><span>Anthropic</span><span>DeepSeek</span>
+          </div>
+          <div aria-hidden="true">
+            <span>ElevenLabs</span><span>Cohere</span><span>Perplexity</span
             ><span>NVIDIA</span><span>Cartesia</span><span>OpenAI</span
-            ><span>Anthropic</span><span>DeepSeek</span></span
-          >
+            ><span>Anthropic</span><span>DeepSeek</span>
+          </div>
         </div>
       </section>
 
       <!-- PROCESS -->
-      <section id="process" class="py-20 md:py-28 bg-paper">
+      <section id="process">
         <div class="wrap">
-          <div class="reveal max-w-2xl">
-            <p class="kick text-graphite">// How it's possible</p>
-            <h2 class="h2 text-navy">Three Important Steps of Consulting</h2>
-            <p class="mt-4 text-graphite text-base sm:text-lg leading-relaxed">
+          <div class="head c reveal">
+            <span class="kick">How it's possible</span>
+            <h2>Three Important Steps of Consulting</h2>
+            <p class="lead">
               Identify, Recruit, Deliver – our proven consulting process ensures
               perfect placement.
             </p>
           </div>
-          <ol class="reveal mt-14 grid md:grid-cols-3 gap-8">
-            <li class="border-t-2 border-navy/30 pt-5">
-              <span class="font-mono text-brass text-2xl font-semibold"
-                >01</span
-              >
-              <h3 class="font-display font-semibold text-navy mt-2 mb-2">
-                Job Analysis
-              </h3>
-              <p class="text-graphite text-sm leading-relaxed">
+          <ol class="tl reveal" id="timeline">
+            <li class="st">
+              <div class="n">01</div>
+              <h3>Job Analysis</h3>
+              <p>
                 Define roles, responsibilities, and skills to ensure perfect
                 candidate alignment.
               </p>
             </li>
-            <li class="border-t-2 border-navy/30 pt-5">
-              <span class="font-mono text-brass text-2xl font-semibold"
-                >02</span
-              >
-              <h3 class="font-display font-semibold text-navy mt-2 mb-2">
-                Applicant Review
-              </h3>
-              <p class="text-graphite text-sm leading-relaxed">
+            <li class="st">
+              <div class="n">02</div>
+              <h3>Applicant Review</h3>
+              <p>
                 Thoroughly screened applicants evaluated for skills, experience,
                 and cultural fit.
               </p>
             </li>
-            <li class="border-t-2 border-brass pt-5">
-              <span class="font-mono text-brass text-2xl font-semibold"
-                >03</span
-              >
-              <h3 class="font-display font-semibold text-navy mt-2 mb-2">
-                Job Place &amp; Check
-              </h3>
-              <p class="text-graphite text-sm leading-relaxed">
+            <li class="st">
+              <div class="n">03</div>
+              <h3>Job Place &amp; Check</h3>
+              <p>
                 Job matched, placed, and checked for compliance, readiness, and
                 reliability.
               </p>
@@ -870,227 +1705,191 @@
       </section>
 
       <!-- TESTIMONIALS -->
-      <section
-        id="testimonials"
-        class="py-20 md:py-28 bg-navy text-paper blueprint-grid"
-      >
+      <section id="testimonials" class="testi">
         <div class="wrap">
-          <div class="reveal max-w-2xl mb-12">
-            <p class="kick text-cyan">// Testimonials</p>
-            <h2 class="h2">Teams That Built With Us, Stay With Us</h2>
-            <p class="mt-4 text-slateline text-base sm:text-lg leading-relaxed">
-              Founders, CTOs, and hiring managers rely on Dynamonexovra
-              Consult to ship production-grade software and scale their teams
-              quickly.
+          <div class="head c reveal">
+            <span class="kick">Testimonials</span>
+            <h2>Teams That Built With Us, Stay With Us</h2>
+            <p class="lead">
+              Founders, CTOs, and hiring managers rely on Dynamonexovra Consult
+              to ship production-grade software and scale their teams quickly.
             </p>
           </div>
-          <div
-            class="reveal relative bg-paper text-ink rounded-sm p-8 sm:p-12 max-w-3xl mx-auto"
-          >
-            <div id="testimonial-track" class="min-h-[10rem]">
-              <blockquote class="slide">
-                <p class="text-lg sm:text-xl leading-relaxed font-display">
-                  “Within two weeks we had a full squad of engineers delivering
-                  features faster than our internal team. Communication and code
-                  quality are top-notch.”
-                </p>
-                <footer class="mt-6 font-mono text-sm text-navy">
-                  — Ananya Sharma, VP Engineering, FinEdge
-                </footer>
-              </blockquote>
-              <blockquote class="slide hidden">
-                <p class="text-lg sm:text-xl leading-relaxed font-display">
-                  “Their product pod felt like an extension of our own company.
-                  From UX to release management, they owned the outcomes and
-                  kept us in the loop.”
-                </p>
-                <footer class="mt-6 font-mono text-sm text-navy">
-                  — Michael Lee, Founder, Nova Health
-                </footer>
-              </blockquote>
-              <blockquote class="slide hidden">
-                <p class="text-lg sm:text-xl leading-relaxed font-display">
-                  Dynamonexovra helped us hire niche roles we’d been trying
-                  to fill for months. Every candidate was on-brief and
-                  technically excellent.”
-                </p>
-                <footer class="mt-6 font-mono text-sm text-navy">
-                  — Rohit Patel, CTO, GridStack
-                </footer>
-              </blockquote>
-            </div>
-            <div
-              class="flex gap-2 mt-8"
-              role="tablist"
-              aria-label="Testimonials"
-            >
-              <button
-                class="dot w-8 h-1.5 rounded-full bg-brass"
-                aria-label="Testimonial 1"
-              ></button>
-              <button
-                class="dot w-8 h-1.5 rounded-full bg-navy/20"
-                aria-label="Testimonial 2"
-              ></button>
-              <button
-                class="dot w-8 h-1.5 rounded-full bg-navy/20"
-                aria-label="Testimonial 3"
-              ></button>
-            </div>
+          <div class="tg3">
+            <blockquote class="q reveal">
+              <p>
+                “Within two weeks we had a full squad of engineers delivering
+                features faster than our internal team. Communication and code
+                quality are top-notch.”
+              </p>
+              <footer>— Ananya Sharma, VP Engineering, FinEdge</footer>
+            </blockquote>
+            <blockquote class="q reveal">
+              <p>
+                “Their product pod felt like an extension of our own company.
+                From UX to release management, they owned the outcomes and kept
+                us in the loop.”
+              </p>
+              <footer>— Michael Lee, Founder, Nova Health</footer>
+            </blockquote>
+            <blockquote class="q reveal">
+              <p>
+                “Dynamonexovra helped us hire niche roles we’d been trying to
+                fill for months. Every candidate was on-brief and technically
+                excellent.”
+              </p>
+              <footer>— Rohit Patel, CTO, GridStack</footer>
+            </blockquote>
           </div>
         </div>
       </section>
 
       <!-- CONTACT -->
-      <section
-        id="contact"
-        class="py-20 md:py-28 bg-navy-deep text-paper relative overflow-hidden blueprint-grid"
-      >
-        <div class="wrap grid lg:grid-cols-2 gap-14 relative">
-          <div class="reveal">
-            <p class="kick text-cyan">// Contact</p>
-            <h2 class="h2 mb-6">Looking to Hire Skilled Offshore Talent?</h2>
-            <p class="text-slateline mb-10 max-w-md leading-relaxed">
+      <section id="contact">
+        <div class="wrap">
+          <div class="head c reveal">
+            <span class="kick">Contact</span>
+            <h2>Looking to Hire Skilled Offshore Talent?</h2>
+            <p class="lead">
               Share your consulting needs and our team will get back to you
               within one business day with a tailored offshore hiring plan
               aligned to your goals.
             </p>
+          </div>
+          <div class="cgrid">
             <form
               id="contact-form"
-              class="space-y-5"
+              class="reveal"
               novalidate
               autocomplete="off"
             >
-              <div>
-                <label
-                  for="name"
-                  class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2"
-                  >Full name</label
-                ><input
-                  id="name"
-                  type="text"
-                  required
-                  class="fld"
-                  placeholder="Your name"
-                />
-                <p class="err hidden text-brass text-xs font-mono mt-1">
-                  Please enter your name.
-                </p>
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" type="text" required placeholder="Your name" />
+                <p class="err">Please enter your name.</p>
               </div>
-              <div>
-                <label
-                  for="email"
-                  class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2"
-                  >Work email</label
-                ><input
+              <div class="field">
+                <label for="email">Work email</label>
+                <input
                   id="email"
                   type="email"
                   required
-                  class="fld"
                   placeholder="you@company.com"
                 />
-                <p class="err hidden text-brass text-xs font-mono mt-1">
-                  Please enter a valid email.
-                </p>
+                <p class="err">Please enter a valid email.</p>
               </div>
-              <div>
-                <label
-                  for="need"
-                  class="block font-mono text-xs uppercase tracking-wider text-slateline mb-2"
-                  >Requirements</label
-                ><textarea
+              <div class="field">
+                <label for="need">Requirements</label>
+                <textarea
                   id="need"
                   rows="4"
                   required
-                  class="fld resize-none"
                   placeholder="Tell us about the type of talent or project support you need..."
                 ></textarea>
-                <p class="err hidden text-brass text-xs font-mono mt-1">
-                  Please describe your requirements.
-                </p>
+                <p class="err">Please describe your requirements.</p>
               </div>
-              <button type="submit" class="btn w-full sm:w-auto">
-                Submit requirements
-              </button>
-              <p
-                id="form-success"
-                role="status"
-                class="hidden text-cyan font-mono text-sm"
-              >
+              <button type="submit" class="btn">Submit requirements</button>
+              <p id="form-success" role="status">
                 Thank you! We will get back to you shortly.
               </p>
             </form>
+            <aside class="info reveal">
+              <p class="t">
+                Prefer email? Our specialists are always available to assist you
+                with consulting, project outsourcing, or talent onboarding.
+              </p>
+              <ul>
+                <li>
+                  <span class="bx"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <path d="M3 7l9 6 9-6" /></svg
+                  ></span>
+                  <div>
+                    <h3>Sales &amp; Hiring</h3>
+                    <p>contact@dynamonexovra.com</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="bx"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <path d="M3 7l9 6 9-6" /></svg
+                  ></span>
+                  <div>
+                    <h3>Support &amp; Partnerships</h3>
+                    <p>support@dynamonexovra.com</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="bx"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"
+                      />
+                      <circle cx="12" cy="10" r="2.5" /></svg
+                  ></span>
+                  <div>
+                    <h3>Location</h3>
+                    <p style="word-break: normal">
+                      West Chester, PA &bull; Serving clients worldwide
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </aside>
           </div>
-          <aside
-            class="reveal border border-white/15 rounded-sm p-6 bg-white/5 self-start"
-          >
-            <p class="text-slateline leading-relaxed mb-6">
-              Prefer email? Our specialists are always available to assist you
-              with consulting, project outsourcing, or talent onboarding.
-            </p>
-            <ul class="space-y-5">
-              <li>
-                <h3
-                  class="font-mono text-xs uppercase tracking-widest text-cyan mb-1"
-                >
-                  Sales &amp; Hiring
-                </h3>
-                <p class="font-display text-lg break-all">
-                  contact@
-                </p>
-              </li>
-              <li>
-                <h3
-                  class="font-mono text-xs uppercase tracking-widest text-cyan mb-1"
-                >
-                  Support &amp; Partnerships
-                </h3>
-                <p class="font-display text-lg break-all">
-                  support@dynamonexovra.com
-                </p>
-              </li>
-              <li>
-                <h3
-                  class="font-mono text-xs uppercase tracking-widest text-cyan mb-1"
-                >
-                  Location
-                </h3>
-                <p class="font-display text-lg">
-                  West Chester, PA &bull; Serving clients worldwide
-                </p>
-              </li>
-            </ul>
-          </aside>
         </div>
       </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-navy-deep text-slateline border-t border-white/10">
-      <div class="wrap py-12 grid md:grid-cols-[1.4fr,1fr,1fr] gap-10">
+    <footer class="site">
+      <div class="wrap fgrid">
         <div>
-          <p class="font-display font-semibold text-paper text-lg mb-3">
-            Dynamonexovra<span class="text-brass">.</span>
+          <p class="logo">Dynamonexovra<i>.</i></p>
+          <p>
+            Dynamonexovra, a powerhouse in the realm of consulting solutions for
+            offshore clients, stands as a beacon of excellence. Our commitment
+            to delivering seamless consulting contracts spans industries, with a
+            relentless focus on top-tier human resources.
           </p>
-          <p class="text-sm leading-relaxed max-w-md mb-3">
-            Dynamonexovra, a powerhouse in the realm of consulting solutions
-            for offshore clients, stands as a beacon of excellence. Our
-            commitment to delivering seamless consulting contracts spans
-            industries, with a relentless focus on top-tier human resources.
-          </p>
-          <p class="text-sm leading-relaxed max-w-md">
+          <p>
             We empower global organizations to trim costs, improve resource
             allocation, and boost profitability through unparalleled management
             and organizational efficiency.
           </p>
         </div>
         <div>
-          <h4
-            class="font-mono text-xs uppercase tracking-widest text-cyan mb-4"
-          >
-            Services
-          </h4>
-          <ul class="space-y-2 text-sm">
+          <h4>Services</h4>
+          <ul>
             <li>IT Consulting</li>
             <li>Software Development</li>
             <li>Cloud Solutions</li>
@@ -1100,56 +1899,27 @@
           </ul>
         </div>
         <div>
-          <h4
-            class="font-mono text-xs uppercase tracking-widest text-cyan mb-4"
-          >
-            Contact
-          </h4>
-          <div class="text-sm space-y-2">
-            <p><strong class="text-paper">Address:</strong> West Chester, PA</p>
-            <p>
-              <strong class="text-paper">Support Email:</strong>
-              support@dynamonexovra.com
-            </p>
-            <p>
-              <strong class="text-paper">Business Email:</strong>
-              contact@dynamonexovra.com
-            </p>
-            <p class="pt-2 flex flex-wrap gap-x-4 gap-y-1">
-              <a
-                class="hover:text-paper"
-                href="https://facebook.com/dynamonexovra"
-                >Facebook</a
-              ><a
-                class="hover:text-paper"
-                href="https://www.linkedin.com/company/dynamonexovra/"
-                >LinkedIn</a
-              ><a
-                class="hover:text-paper"
-                href="https://instagram.com/dynamonexovra"
-                >Instagram</a
-              ><a
-                class="hover:text-paper"
-                href="https://twitter.com/dynamonexovra"
-                >Twitter</a
-              >
-            </p>
+          <h4>Contact</h4>
+          <p><strong>Address:</strong> West Chester, PA</p>
+          <p><strong>Support Email:</strong> support@dynamonexovra.com</p>
+          <p><strong>Business Email:</strong> contact@dynamonexovra.com</p>
+          <div class="soc">
+            <a href="https://facebook.com/dynamonexovra">Facebook</a>
+            <a href="https://www.linkedin.com/company/dynamonexovra/"
+              >LinkedIn</a
+            >
+            <a href="https://instagram.com/dynamonexovra">Instagram</a>
+            <a href="https://twitter.com/dynamonexovra">Twitter</a>
           </div>
         </div>
       </div>
-      <div
-        class="border-t border-white/10 py-6 px-5 sm:px-8 max-w-7xl mx-auto text-xs font-mono"
-      >
+      <div class="wrap copy">
         © <span id="year">2026</span> Dynamonexovra Consult — All rights
         reserved.
       </div>
     </footer>
 
-    <button
-      id="back-to-top"
-      aria-label="Back to top"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brass text-navy flex items-center justify-center opacity-0 pointer-events-none translate-y-3 shadow-lg"
-    >
+    <button id="back-to-top" aria-label="Back to top">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path
           d="M9 14V4M4 9l5-5 5 5"
@@ -1171,8 +1941,8 @@
         mm.style.maxHeight = o ? mm.scrollHeight + "px" : "0";
         mm.style.opacity = o ? "1" : "0";
         mt.setAttribute("aria-expanded", o);
-        $("#icon-open").classList.toggle("hidden", o);
-        $("#icon-close").classList.toggle("hidden", !o);
+        $("#icon-open").style.display = o ? "none" : "block";
+        $("#icon-close").style.display = o ? "block" : "none";
       }
       mt.addEventListener("click", () =>
         setMenu(mt.getAttribute("aria-expanded") !== "true"),
@@ -1185,38 +1955,31 @@
         (es) =>
           es.forEach((e) => {
             if (e.isIntersecting) {
-              e.target.classList.add("in-view");
+              e.target.classList.add("in");
               io.unobserve(e.target);
             }
           }),
         { threshold: 0.12 },
       );
       $$(".reveal").forEach((el) => io.observe(el));
-      // Testimonials
-      const slides = $$(".slide"),
-        dots = $$(".dot");
-      let ti = 0,
-        timer;
-      function show(i) {
-        ti = i;
-        slides.forEach((s, k) => s.classList.toggle("hidden", k !== i));
-        dots.forEach((d, k) => {
-          d.classList.toggle("bg-brass", k === i);
-          d.classList.toggle("bg-navy/20", k !== i);
-          d.setAttribute("aria-selected", k === i);
-        });
-      }
-      function auto() {
-        clearInterval(timer);
-        timer = setInterval(() => show((ti + 1) % slides.length), 6000);
-      }
-      dots.forEach((d, k) =>
-        d.addEventListener("click", () => {
-          show(k);
-          auto();
-        }),
+      // Active nav link
+      const links = $$("nav.primary a"),
+        secs = links.map((a) => $(a.getAttribute("href")));
+      const so = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              links.forEach((l) =>
+                l.classList.toggle(
+                  "active",
+                  l.getAttribute("href") === "#" + e.target.id,
+                ),
+              );
+            }
+          }),
+        { rootMargin: "-45% 0px -50% 0px" },
       );
-      auto();
+      secs.forEach((s) => s && so.observe(s));
       // Contact form
       $("#contact-form").addEventListener("submit", (e) => {
         e.preventDefault();
@@ -1228,24 +1991,23 @@
         ].forEach(([s, t]) => {
           const f = $(s),
             good = t(f.value);
-          f.nextElementSibling.classList.toggle("hidden", !!good);
+          f.nextElementSibling.classList.toggle("show", !good);
           if (!good) ok = false;
         });
         if (ok) {
-          $("#form-success").classList.remove("hidden");
+          $("#form-success").classList.add("show");
           e.target.reset();
         }
       });
-      // Year + back to top
+      // Year, header shadow, back to top
       $("#year").textContent = new Date().getFullYear();
-      const bt = $("#back-to-top");
+      const bt = $("#back-to-top"),
+        hdr = $("#hdr");
       addEventListener(
         "scroll",
         () => {
-          const on = scrollY > 600;
-          bt.classList.toggle("opacity-0", !on);
-          bt.classList.toggle("pointer-events-none", !on);
-          bt.classList.toggle("translate-y-3", !on);
+          bt.classList.toggle("show", scrollY > 600);
+          hdr.classList.toggle("scrolled", scrollY > 20);
         },
         { passive: true },
       );
