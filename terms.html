@@ -1,87 +1,99 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Terms of Service — DYNAMONEXOVRA TECHNOLOGY</title>
+
     <meta
       name="description"
       content="Terms of Service and legal agreements for engaging with DYNAMONEXOVRA TECHNOLOGY."
     />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Link to your separated JS file -->
-    <script src="./script.js" defer></script>
 
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              navy: { DEFAULT: "#0E2233", deep: "#0A1B29", mid: "#132C41" },
-              cyan: { DEFAULT: "#6FD3E0", dim: "#3E7C8A" },
-              brass: { DEFAULT: "#D4A24C", light: "#E8C079" },
-              paper: "#F4F1E8",
-              ink: "#16202B",
-              slateline: "#9FB4C2",
-              graphite: "#57626B",
+              navy: { DEFAULT: "#1f4fd8", deep: "#0f2a75", mid: "#173ba6" },
+
+              cyan: { DEFAULT: "#1f4fd8", dim: "#0f2a75" },
+
+              brass: { DEFAULT: "#1f4fd8", light: "#0f2a75" },
+
+              paper: "#ffffff",
+
+              ink: "#1c2433",
+
+              slateline: "#617089",
+
+              graphite: "#617089",
             },
+
             fontFamily: {
-              display: ['"Space Grotesk"', "sans-serif"],
-              body: ['"IBM Plex Sans"', "sans-serif"],
-              mono: ['"IBM Plex Mono"', "monospace"],
+              display: ["Arial", "Helvetica", "sans-serif"],
+              body: ["Arial", "Helvetica", "sans-serif"],
+              mono: ["Arial", "Helvetica", "sans-serif"],
             },
           },
         },
       };
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link to your separated JS file -->
+
+    <script src="./script.js" defer></script>
 
     <style>
       :root {
         color-scheme: light;
       }
+
       html {
         scroll-behavior: smooth;
       }
+
       body {
-        font-family: "IBM Plex Sans", sans-serif;
-        background: #f4f1e8;
-        color: #16202b;
+        font-family: Arial, Helvetica, sans-serif;
+
+        background: #ffffff;
+
+        color: #1c2433;
       }
+
       ::selection {
-        background: #d4a24c;
-        color: #0e2233;
+        background: #1f4fd8;
+
+        color: #0f2a75;
       }
 
       a:focus-visible,
       button:focus-visible {
-        outline: 2px solid #d4a24c;
+        outline: 2px solid #1f4fd8;
+
         outline-offset: 3px;
+
         border-radius: 2px;
       }
 
-      /* Blueprint grid backgrounds */
       .blueprint-grid {
         background-image:
-          linear-gradient(rgba(111, 211, 224, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(111, 211, 224, 0.08) 1px, transparent 1px);
+          linear-gradient(rgba(31, 79, 216, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(31, 79, 216, 0.08) 1px, transparent 1px);
+
         background-size: 32px 32px;
       }
 
-      /* Animations */
       .cursor-blink {
         animation: blink 1.1s step-start infinite;
       }
+
       @keyframes blink {
         50% {
           opacity: 0;
@@ -89,48 +101,63 @@
       }
 
       .status-dot {
-        box-shadow: 0 0 0 0 rgba(111, 211, 224, 0.6);
+        box-shadow: 0 0 0 0 rgba(31, 79, 216, 0.6);
+
         animation: dotping 2s infinite;
       }
+
       @keyframes dotping {
         0% {
-          box-shadow: 0 0 0 0 rgba(111, 211, 224, 0.55);
+          box-shadow: 0 0 0 0 rgba(31, 79, 216, 0.55);
         }
+
         70% {
-          box-shadow: 0 0 0 8px rgba(111, 211, 224, 0);
+          box-shadow: 0 0 0 8px rgba(31, 79, 216, 0);
         }
+
         100% {
-          box-shadow: 0 0 0 0 rgba(111, 211, 224, 0);
+          box-shadow: 0 0 0 0 rgba(31, 79, 216, 0);
         }
       }
 
-      /* Reveal on scroll */
       .reveal {
         opacity: 0;
+
         transform: translateY(24px);
+
         transition:
           opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
           transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
       }
+
       .reveal.in-view {
         opacity: 1;
+
         transform: translateY(0);
       }
 
-      /* Nav underline */
       .nav-link {
         position: relative;
       }
+
       .nav-link::after {
         content: "";
+
         position: absolute;
+
         left: 0;
+
         bottom: -4px;
+
         width: 0;
+
         height: 2px;
-        background: #d4a24c;
+
+        background: #1f4fd8;
+
         transition: width 0.3s ease;
       }
+
       .nav-link:hover::after,
       .nav-link.active::after {
         width: 100%;
@@ -139,39 +166,56 @@
       ::-webkit-scrollbar {
         width: 10px;
       }
+
       ::-webkit-scrollbar-track {
-        background: #0e2233;
+        background: #0f2a75;
       }
+
       ::-webkit-scrollbar-thumb {
-        background: #3e7c8a;
+        background: #0f2a75;
+
         border-radius: 6px;
       }
 
-      /* Rich text formatting for legal document */
       .legal-doc h2 {
-        font-family: "Space Grotesk", sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
+
         font-weight: 600;
+
         font-size: 1.5rem;
-        color: #0e2233;
+
+        color: #0f2a75;
+
         margin-top: 2.5rem;
+
         margin-bottom: 1rem;
       }
+
       .legal-doc p {
         margin-bottom: 1.25rem;
-        color: #57626b;
+
+        color: #617089;
+
         line-height: 1.75;
       }
+
       .legal-doc ul {
         list-style-type: disc;
+
         padding-left: 1.5rem;
+
         margin-bottom: 1.25rem;
-        color: #57626b;
+
+        color: #617089;
       }
+
       .legal-doc li {
         margin-bottom: 0.5rem;
       }
+
       .legal-doc strong {
-        color: #16202b;
+        color: #1c2433;
+
         font-weight: 600;
       }
     </style>
@@ -185,6 +229,7 @@
     >
 
     <!-- ============ HEADER ============ -->
+
     <header
       id="site-header"
       class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-navy/95 backdrop-blur border-b border-cyan/10"
@@ -202,11 +247,13 @@
             alt="DYNAMONEXOVRA TECHNOLOGY"
             class="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0"
           />
+
           <span
             class="font-display font-semibold tracking-tight text-paper text-sm sm:text-base leading-none"
           >
             DYNAMONEXOVRA<span class="text-brass">.</span
             ><br class="hidden sm:block" />
+
             <span
               class="text-[10px] sm:text-xs font-mono font-normal tracking-[0.25em] text-slateline"
               >TECHNOLOGY</span
@@ -223,21 +270,25 @@
             class="nav-link hover:text-paper transition-colors"
             >Services</a
           >
+
           <a
             href="index.html#process"
             class="nav-link hover:text-paper transition-colors"
             >Process</a
           >
+
           <a
             href="index.html#work"
             class="nav-link hover:text-paper transition-colors"
             >Why Us</a
           >
+
           <a
             href="careers.html"
             class="nav-link hover:text-paper transition-colors"
             >Careers</a
           >
+
           <a
             href="index.html#contact"
             class="nav-link hover:text-paper transition-colors"
@@ -252,6 +303,7 @@
           >
             Start a project
           </a>
+
           <button
             id="menu-toggle"
             class="lg:hidden text-paper p-2 -mr-2"
@@ -273,6 +325,7 @@
                 stroke-linecap="round"
               />
             </svg>
+
             <svg
               id="icon-close"
               width="24"
@@ -305,21 +358,25 @@
             class="py-3 border-b border-white/5 hover:text-brass transition-colors"
             >Services</a
           >
+
           <a
             href="index.html#process"
             class="py-3 border-b border-white/5 hover:text-brass transition-colors"
             >Process</a
           >
+
           <a
             href="index.html#work"
             class="py-3 border-b border-white/5 hover:text-brass transition-colors"
             >Why Us</a
           >
+
           <a
             href="careers.html"
             class="py-3 border-b border-white/5 hover:text-brass transition-colors"
             >Careers</a
           >
+
           <a
             href="index.html#contact"
             class="py-3 hover:text-brass transition-colors"
@@ -331,6 +388,7 @@
 
     <main id="main-content">
       <!-- ============ HEADER BANNER ============ -->
+
       <section
         class="bg-navy text-paper pt-36 pb-16 md:pt-44 md:pb-20 blueprint-grid border-b border-cyan/10"
       >
@@ -339,13 +397,16 @@
             class="font-mono text-xs uppercase tracking-[0.3em] text-cyan mb-4 flex items-center justify-center gap-2"
           >
             <span class="w-2 h-2 rounded-full bg-cyan status-dot"></span>
+
             Legal Framework<span class="cursor-blink">_</span>
           </p>
+
           <h1
             class="font-display font-semibold text-4xl sm:text-5xl tracking-tight mb-4"
           >
             Terms of Service
           </h1>
+
           <p class="font-mono text-xs text-slateline uppercase tracking-wider">
             Effective Date: October 1, 2026
           </p>
@@ -353,6 +414,7 @@
       </section>
 
       <!-- ============ DOCUMENT CONTENT ============ -->
+
       <section class="py-16 md:py-24 bg-paper">
         <div class="max-w-3xl mx-auto px-5 sm:px-8 legal-doc reveal">
           <p class="text-lg text-ink font-medium">
@@ -360,9 +422,11 @@
             constitute a legally binding agreement between you and DYNAMONEXOVRA
             TECHNOLOGY.
           </p>
+
           <hr class="my-8 border-navy/10" />
 
           <h2>1. Introduction & Agreement</h2>
+
           <p>
             These Terms of Service govern the relationship between you (the
             "Client") and DYNAMONEXOVRA TECHNOLOGY, a registered partnership
@@ -371,6 +435,7 @@
             signing a Statement of Work (SOW), you agree to be bound by these
             Terms.
           </p>
+
           <p>
             If you are entering into these Terms on behalf of a company,
             organization, or other legal entity, you represent that you have the
@@ -378,25 +443,31 @@
           </p>
 
           <h2>2. Scope of Services</h2>
+
           <p>
             We provide software engineering, web and mobile application
             development, enterprise architecture, and IT consulting services.
             The specific scope of work for any engagement will be explicitly
             detailed in a mutually agreed-upon
+
             <strong>Statement of Work (SOW)</strong> or
+
             <strong>Scope Document</strong> prior to the commencement of any
             engineering activities.
           </p>
+
           <ul>
             <li>
               <strong>Fixed-Scope Engagements:</strong> Work is delivered based
               on the initial agreed-upon architecture and feature list.
             </li>
+
             <li>
               <strong>Change Requests:</strong> Any features, modifications, or
               requirements outside the original SOW will be treated as a Change
               Request and subject to additional timelines and cost estimations.
             </li>
+
             <li>
               <strong>No Skipped Steps:</strong> We enforce a strict pipeline
               (Discovery, Architecture, Development, QA, Launch). The Client
@@ -406,21 +477,26 @@
           </ul>
 
           <h2>3. Payment & Billing Terms</h2>
+
           <p>
             Pricing for our services is structured as per the signed proposal.
             We operate on milestone-based billing for fixed-scope projects,
             ensuring transparency and accountability.
           </p>
+
           <ul>
             <li>
               Invoices are payable within
+
               <strong>seven (7) calendar days</strong> of receipt unless
               otherwise specified in your SOW.
             </li>
+
             <li>
               A standard mobilization advance (typically 20-30%) is required
               before the Discovery or Architecture phase commences.
             </li>
+
             <li>
               Late payments may result in an immediate pause of development
               sprints and suspension of staging environments until the balance
@@ -429,6 +505,7 @@
           </ul>
 
           <h2>4. Intellectual Property & Code Ownership</h2>
+
           <p>
             We believe that you should own what you pay for. Upon receipt of
             full and final payment for a project milestone or completed project,
@@ -436,6 +513,7 @@
             documentation, and digital assets produced specifically for the
             Client transfer completely to the Client.
           </p>
+
           <p>
             <strong>Exceptions:</strong> DYNAMONEXOVRA TECHNOLOGY retains
             ownership of any pre-existing proprietary libraries, open-source
@@ -446,6 +524,7 @@
           </p>
 
           <h2>5. Confidentiality & NDA-First Policy</h2>
+
           <p>
             We prioritize the security of your trade secrets. All engagements
             operate under a default Non-Disclosure framework. The Company agrees
@@ -455,13 +534,16 @@
           </p>
 
           <h2>6. Warranties & Post-Launch Support</h2>
+
           <p>
             We build reliable technology, and we stand by our code. Every
             delivered project includes a designated
+
             <strong>Post-Launch Support Window</strong> (typically 30 to 60
             days, as defined in your SOW) to address any bugs, defects, or
             deviations from the signed architecture document.
           </p>
+
           <p>
             <strong>Disclaimer of Additional Warranties:</strong> Outside of the
             explicitly defined support window and SLA, all software is provided
@@ -471,6 +553,7 @@
           </p>
 
           <h2>7. Limitation of Liability</h2>
+
           <p>
             In no event shall DYNAMONEXOVRA TECHNOLOGY, its partners, engineers,
             or affiliates be liable for any indirect, incidental, special,
@@ -482,6 +565,7 @@
           </p>
 
           <h2>8. Termination</h2>
+
           <p>
             Either party may terminate a project with a 15-day written notice.
             In the event of early termination by the Client, the Client remains
@@ -492,6 +576,7 @@
           </p>
 
           <h2>9. Governing Law & Jurisdiction</h2>
+
           <p>
             These Terms and any separate agreements whereby we provide you
             Services shall be governed by and construed in accordance with the
@@ -501,14 +586,17 @@
           </p>
 
           <hr class="my-10 border-navy/10" />
+
           <p
             class="text-sm font-mono uppercase tracking-wider text-graphite mb-2"
           >
             Contacting Us
           </p>
+
           <p class="text-sm">
             If you have any questions regarding these Terms, please contact our
             legal team at
+
             <a
               href="mailto:legal@dynamonexovra.com"
               class="text-brass hover:underline"
@@ -520,102 +608,295 @@
     </main>
 
     <!-- ============ FOOTER ============ -->
-    <footer class="bg-navy-deep text-slateline border-t border-white/10">
-      <div
-        class="max-w-7xl mx-auto px-5 sm:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10"
-      >
-        <div>
-          <p class="font-display font-semibold text-paper text-lg mb-3">
-            DYNAMONEXOVRA<span class="text-brass">.</span>
-          </p>
-          <p class="text-sm leading-relaxed max-w-xs">
-            A registered software development company headquartered in Auraiya,
-            Uttar Pradesh, delivering engineering-grade digital products.
+    <footer
+      class="site-footer bg-navy-deep text-slateline border-t border-blue-100"
+    >
+      <div class="footer-grid max-w-7xl mx-auto px-5 sm:px-8 py-12">
+        <!-- About -->
+        <div class="footer-about">
+          <a href="index.html" class="footer-brand">
+            DYNAMONEXOVRA<span>.</span>
+            <small>TECHNOLOGY</small>
+          </a>
+          <p class="footer-description">
+            A software development and technology consulting company delivering
+            reliable digital products and engineering solutions.
           </p>
         </div>
-        <div>
-          <h4
-            class="font-mono text-xs uppercase tracking-widest text-cyan mb-4"
-          >
-            Company
-          </h4>
-          <ul class="space-y-2 text-sm">
-            <li>
-              <a
-                href="index.html#services"
-                class="hover:text-paper transition-colors"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="index.html#process"
-                class="hover:text-paper transition-colors"
-                >Process</a
-              >
-            </li>
-            <li>
-              <a
-                href="index.html#work"
-                class="hover:text-paper transition-colors"
-                >Why us</a
-              >
-            </li>
-            <li>
-              <a href="careers.html" class="hover:text-paper transition-colors"
-                >Careers</a
-              >
-            </li>
+
+        <!-- Services -->
+        <div class="footer-column">
+          <h2>Services</h2>
+          <ul>
+            <li><a href="index.html#services">IT Consulting</a></li>
+            <li><a href="index.html#services">Software Development</a></li>
+            <li><a href="index.html#services">Cloud Solutions</a></li>
+            <li><a href="index.html#services">Project Outsourcing</a></li>
+            <li><a href="index.html#services">Cybersecurity Services</a></li>
+            <li><a href="careers.html">Careers</a></li>
           </ul>
         </div>
-        <div>
-          <h4
-            class="font-mono text-xs uppercase tracking-widest text-cyan mb-4"
-          >
-            Legal
-          </h4>
-          <ul class="space-y-2 text-sm">
+
+        <!-- Legal -->
+        <div class="footer-column">
+          <h2>Legal &amp; Policies</h2>
+          <ul>
             <li>
-              <a href="terms.html" class="text-brass">Terms of service</a>
-            </li>
-            <li>
-              <a href="./privacy.html" class="hover:text-paper transition-colors"
-                >Privacy policy</a
+              <a href="terms.html" aria-current="page"
+                >Terms &amp; Conditions</a
               >
             </li>
-            <li>MSME / GST reference*</li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
-        <div>
-          <h4
-            class="font-mono text-xs uppercase tracking-widest text-cyan mb-4"
-          >
-            Registered office
-          </h4>
-          <address class="not-italic text-sm leading-relaxed">
-            182 Bheekhampur, Auraiya<br />Uttar Pradesh — 206122<br />India
-          </address>
+
+        <!-- Contact -->
+        <div class="footer-column footer-contact">
+          <h2>Contact Us</h2>
+          <div class="contact-lines">
+            <p>
+              <strong>Address:</strong>
+              <span
+                >182 Bheekhampur, Auraiya, Uttar Pradesh — 206122, India</span
+              >
+            </p>
+            <p>
+              <strong>Support:</strong>
+              <a href="mailto:support@dynamonexovra.com"
+                >support@dynamonexovra.com</a
+              >
+            </p>
+            <p>
+              <strong>Business:</strong>
+              <a href="mailto:contact@dynamonexovra.com"
+                >contact@dynamonexovra.com</a
+              >
+            </p>
+          </div>
+          <div class="footer-social" aria-label="Social media links">
+            <a
+              href="https://facebook.com/dynamonexovra"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+            <a
+              href="https://www.linkedin.com/company/dynamonexovra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            <a
+              href="https://instagram.com/dynamonexovra"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+            <a
+              href="https://twitter.com/dynamonexovra"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twitter</a
+            >
+          </div>
         </div>
       </div>
-      <div
-        class="border-t border-white/10 py-6 px-5 sm:px-8 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono"
-      >
+
+      <div class="footer-bottom max-w-7xl mx-auto px-5 sm:px-8">
         <p>
-          © <span id="year"></span> DYNAMONEXOVRA TECHNOLOGY. All rights
+          &copy; <span id="year"></span> DYNAMONEXOVRA TECHNOLOGY. All rights
           reserved.
         </p>
-        <p class="text-slateline/70">
-          Doc. DX-2026-003 · Legal · Auraiya, Uttar Pradesh
-        </p>
+        <p>Terms of Service · Privacy · Auraiya, Uttar Pradesh</p>
       </div>
     </footer>
+
+    <style>
+      /* Footer follows the site's blue-and-white visual theme */
+      .site-footer {
+        background: #0f2a75;
+        color: #dbe5ff;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns:
+          minmax(0, 1.35fr) minmax(0, 0.9fr) minmax(0, 0.9fr)
+          minmax(0, 1.35fr);
+        gap: 32px;
+        align-items: start;
+      }
+      .footer-brand {
+        display: inline-flex;
+        flex-direction: column;
+        color: #fff;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+      }
+      .footer-brand span {
+        color: #9db7ff;
+        display: inline;
+      }
+      .footer-brand small {
+        margin-top: 5px;
+        color: #b9c9f4;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.25em;
+      }
+      .footer-description {
+        margin-top: 16px;
+        max-width: 310px;
+        color: #dbe5ff;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+      .footer-column h2 {
+        margin: 0 0 16px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-column li {
+        margin-bottom: 10px;
+      }
+      .footer-column a {
+        color: #dbe5ff;
+        text-decoration: none;
+        transition:
+          color 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .footer-column a:hover {
+        color: #fff;
+        opacity: 0.82;
+      }
+      .contact-lines {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 11px;
+        max-width: 100%;
+      }
+      .contact-lines p {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        margin: 0;
+        color: #dbe5ff;
+        font-size: 12px;
+        line-height: 1.65;
+        white-space: nowrap;
+      }
+      .contact-lines strong {
+        color: #fff;
+        flex-shrink: 0;
+      }
+      .contact-lines a,
+      .contact-lines span {
+        flex-shrink: 0;
+      }
+      .footer-social {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 13px;
+        margin-top: 18px;
+        padding-bottom: 5px;
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+      .footer-social a {
+        flex: 0 0 auto;
+        font-size: 12px;
+      }
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: #c4d2f4;
+        font-size: 12px;
+      }
+      .footer-bottom p {
+        margin: 0;
+      }
+      @media (max-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .footer-contact {
+          min-width: 0;
+        }
+        .contact-lines {
+          width: max-content;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 576px) {
+        .footer-grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 28px;
+          padding-top: 34px;
+          padding-bottom: 28px;
+        }
+        .footer-description {
+          max-width: none;
+        }
+        .footer-contact {
+          min-width: 0;
+          overflow: hidden;
+        }
+        .contact-lines {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: auto;
+          padding-bottom: 5px;
+        }
+        .contact-lines p {
+          font-size: 12px;
+        }
+        .footer-social {
+          gap: 14px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 11px;
+        }
+      }
+    </style>
+
+    <script>
+      const yearElement = document.getElementById("year");
+      if (yearElement) yearElement.textContent = new Date().getFullYear();
+    </script>
 
     <button
       id="back-to-top"
       aria-label="Back to top"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brass text-navy flex items-center justify-center opacity-0 pointer-events-none translate-y-3 shadow-lg"
+      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brass text-white flex items-center justify-center opacity-0 pointer-events-none translate-y-3 shadow-lg"
     >
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        aria-hidden="true"
+      >
         <path
           d="M9 14V4M4 9l5-5 5 5"
           stroke="currentColor"

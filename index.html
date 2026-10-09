@@ -1304,17 +1304,14 @@
     <!-- HEADER -->
     <header id="hdr">
       <div class="wrap bar">
-       <a href="#top" class="brand" aria-label="DYNAMONEXOVRA Consult — home">
-  <img
-    src="./logo.jpeg"
-    alt="DynamoIntellect Consult"
-  />
+        <a href="#top" class="brand" aria-label="DYNAMONEXOVRA Consult — home">
+          <img src="./logo.jpeg" alt="DynamoIntellect Consult" />
 
-  <span>
-    <b>DYNAMONEXOVRA<i>.</i></b>
-    <small>CONSULT</small>
-  </span>
-</a>
+          <span>
+            <b>DYNAMONEXOVRA<i>.</i></b>
+            <small>Technology</small>
+          </span>
+        </a>
         <nav class="primary" aria-label="Primary">
           <a href="#industries">Industries</a>
           <a href="#services">Services</a>
@@ -1871,55 +1868,347 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ==================== FOOTER ==================== -->
     <footer class="site">
       <div class="wrap fgrid">
-        <div>
+        <!-- Company About -->
+        <div class="footer-about">
           <p class="logo">Dynamonexovra<i>.</i></p>
+
           <p>
-            Dynamonexovra, a powerhouse in the realm of consulting solutions for
-            offshore clients, stands as a beacon of excellence. Our commitment
-            to delivering seamless consulting contracts spans industries, with a
-            relentless focus on top-tier human resources.
+            Dynamonexovra delivers consulting solutions for global
+            organizations, with a focus on human resources, technology, and
+            operational excellence.
           </p>
+
           <p>
-            We empower global organizations to trim costs, improve resource
-            allocation, and boost profitability through unparalleled management
-            and organizational efficiency.
+            We help businesses reduce costs, optimize resources, and improve
+            profitability through effective management and organizational
+            efficiency.
           </p>
         </div>
-        <div>
-          <h4>Services</h4>
+
+        <!-- Services -->
+        <div class="footer-services">
+          <h4>Our Services</h4>
+
           <ul>
-            <li>IT Consulting</li>
-            <li>Software Development</li>
-            <li>Cloud Solutions</li>
-            <li>Project Outsourcing</li>
-            <li>Business Consulting</li>
-            <li>Cybersecurity Services</li>
+            <li><a href="#services">IT Consulting</a></li>
+            <li><a href="#services">Software Development</a></li>
+            <li><a href="#services">Cloud Solutions</a></li>
+            <li><a href="#services">Project Outsourcing</a></li>
+            <li><a href="#services">Business Consulting</a></li>
+            <li><a href="#services">Cybersecurity Services</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Contact</h4>
-          <p><strong>Address:</strong> West Chester, PA</p>
-          <p><strong>Support Email:</strong> support@dynamonexovra.com</p>
-          <p><strong>Business Email:</strong> contact@dynamonexovra.com</p>
+
+        <!-- Legal & Policies -->
+        <div class="footer-legal">
+          <h4>Legal &amp; Policies</h4>
+
+          <ul>
+            <li>
+              <a href="./terms.html">Terms &amp; Conditions</a>
+            </li>
+            <li>
+              <a href="./privacy.html">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+
+          <div class="contact-info">
+            <p>
+              <strong>Address:</strong>
+              <span>West Chester, PA</span>
+            </p>
+
+            <p>
+              <strong>Support Email:</strong>
+              <a href="mailto:support@dynamonexovra.com">
+                support@dynamonexovra.com
+              </a>
+            </p>
+
+            <p>
+              <strong>Business Email:</strong>
+              <a href="mailto:contact@dynamonexovra.com">
+                contact@dynamonexovra.com
+              </a>
+            </p>
+          </div>
+
+          <!-- Social Media -->
           <div class="soc">
-            <a href="https://facebook.com/dynamonexovra">Facebook</a>
-            <a href="https://www.linkedin.com/company/dynamonexovra/"
+            <a
+              href="https://facebook.com/dynamonexovra"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              >Facebook</a
+            >
+
+            <a
+              href="https://www.linkedin.com/company/dynamonexovra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
               >LinkedIn</a
             >
-            <a href="https://instagram.com/dynamonexovra">Instagram</a>
-            <a href="https://twitter.com/dynamonexovra">Twitter</a>
+
+            <a
+              href="https://instagram.com/dynamonexovra"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              >Instagram</a
+            >
+
+            <a
+              href="https://twitter.com/dynamonexovra"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              >Twitter</a
+            >
           </div>
         </div>
       </div>
+
+      <!-- Copyright -->
       <div class="wrap copy">
-        © <span id="year">2026</span> Dynamonexovra Consult — All rights
-        reserved.
+        <p>
+          &copy; <span id="year"></span> Dynamonexovra Consult. All rights
+          reserved.
+        </p>
       </div>
     </footer>
 
+    <!-- Automatic Copyright Year -->
+    <script>
+      const yearElement = document.getElementById("year");
+
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    </script>
+
+    <!-- ==================== FOOTER RESPONSIVE CSS ==================== -->
+    <style>
+      /* Main footer grid */
+      .site .fgrid {
+        display: grid;
+        grid-template-columns:
+          minmax(0, 1.5fr)
+          minmax(0, 1fr)
+          minmax(0, 0.85fr)
+          minmax(0, 1.3fr);
+        gap: 32px;
+        align-items: start;
+        padding-top: 48px;
+        padding-bottom: 36px;
+      }
+
+      .site .fgrid > div {
+        min-width: 0;
+      }
+
+      /* Headings */
+      .site .fgrid h4 {
+        margin: 0 0 18px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      /* Company description */
+      .site .footer-about .logo {
+        margin-top: 0;
+        margin-bottom: 18px;
+        font-size: 23px;
+        font-weight: 800;
+      }
+
+      .site .footer-about .logo i {
+        font-style: normal;
+      }
+
+      .site .footer-about p:not(.logo) {
+        line-height: 1.8;
+        margin-bottom: 14px;
+      }
+
+      /* Services and legal lists */
+      .site .footer-services ul,
+      .site .footer-legal ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .site .footer-services li,
+      .site .footer-legal li {
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+
+      /* Preserve existing theme link colors */
+      .site .fgrid a {
+        transition: opacity 0.2s ease;
+      }
+
+      .site .fgrid a:hover {
+        opacity: 0.75;
+      }
+
+      /* Contact: one line per detail */
+      .site .footer-contact .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .site .footer-contact .contact-info p {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        margin: 0;
+        white-space: nowrap;
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      .site .footer-contact .contact-info strong,
+      .site .footer-contact .contact-info span,
+      .site .footer-contact .contact-info a {
+        flex-shrink: 0;
+      }
+
+      .site .footer-contact .contact-info a {
+        text-decoration: none;
+      }
+
+      /* Social links: always horizontal */
+      .site .footer-contact .soc {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 6px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .site .footer-contact .soc a {
+        flex: 0 0 auto;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      /* Copyright */
+      .site .copy {
+        border-top: 1px solid rgba(128, 128, 128, 0.3);
+        padding-top: 18px;
+        padding-bottom: 18px;
+        text-align: center;
+      }
+
+      .site .copy p {
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      /* Tablet */
+      @media (max-width: 1024px) {
+        .site .fgrid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 32px 24px;
+        }
+
+        .site .footer-contact {
+          min-width: 0;
+        }
+
+        .site .footer-contact .contact-info {
+          width: max-content;
+          max-width: 100%;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 576px) {
+        .site .fgrid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 28px;
+          padding-top: 32px;
+          padding-bottom: 26px;
+        }
+
+        .site .footer-about .logo {
+          font-size: 21px;
+        }
+
+        .site .fgrid h4 {
+          margin-bottom: 14px;
+          font-size: 16px;
+        }
+
+        .site .footer-about p:not(.logo) {
+          font-size: 14px;
+        }
+
+        .site .footer-services li,
+        .site .footer-legal li {
+          margin-bottom: 10px;
+        }
+
+        /* Allow horizontal scrolling instead of wrapping contact rows */
+        .site .footer-contact {
+          min-width: 0;
+          max-width: 100%;
+          overflow: hidden;
+        }
+
+        .site .footer-contact .contact-info {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: auto;
+          align-items: flex-start;
+          padding-bottom: 5px;
+          scrollbar-width: thin;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .site .footer-contact .contact-info p {
+          font-size: 12px;
+        }
+
+        .site .footer-contact .soc {
+          gap: 14px;
+          margin-top: 16px;
+        }
+
+        .site .footer-contact .soc a {
+          font-size: 13px;
+        }
+
+        .site .copy {
+          padding-top: 16px;
+          padding-bottom: 16px;
+          font-size: 12px;
+        }
+      }
+    </style>
+    ```
     <button id="back-to-top" aria-label="Back to top">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
         <path
