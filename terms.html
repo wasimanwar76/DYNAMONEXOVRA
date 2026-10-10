@@ -15,6 +15,7 @@
 
     <!-- Tailwind -->
     <link rel="shortcut icon" href="./logo.jpeg" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
       tailwind.config = {
@@ -221,691 +222,1651 @@
       }
     </style>
   </head>
-
-  <body class="bg-paper text-ink antialiased">
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-brass focus:text-navy focus:px-4 focus:py-2 focus:rounded font-mono text-sm"
-      >Skip to main content</a
-    >
-
-    <!-- ============ HEADER ============ -->
-
-    <header
-      id="site-header"
-      class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-navy/95 backdrop-blur border-b border-cyan/10"
-    >
-      <div
-        class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16 md:h-20 transition-all duration-300"
-      >
-        <a
-          href="index.html"
-          class="flex items-center gap-3 group"
-          aria-label="DYNAMONEXOVRA TECHNOLOGY — home"
-        >
-          <img
-            src="./logo.jpeg"
-            alt="DYNAMONEXOVRA TECHNOLOGY"
-            class="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0"
-          />
-
-          <span
-            class="font-display font-semibold tracking-tight text-paper text-sm sm:text-base leading-none"
-          >
-            DYNAMONEXOVRA<span class="text-brass">.</span
-            ><br class="hidden sm:block" />
-
-            <span
-              class="text-[10px] sm:text-xs font-mono font-normal tracking-[0.25em] text-slateline"
-              >TECHNOLOGY</span
-            >
-          </span>
-        </a>
-
-        <nav
-          class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-slateline"
-          aria-label="Primary"
-        >
-          <a
-            href="index.html#services"
-            class="nav-link hover:text-paper transition-colors"
-            >Services</a
-          >
-
-          <a
-            href="index.html#process"
-            class="nav-link hover:text-paper transition-colors"
-            >Process</a
-          >
-
-          <a
-            href="index.html#work"
-            class="nav-link hover:text-paper transition-colors"
-            >Why Us</a
-          >
-
-          <a
-            href="careers.html"
-            class="nav-link hover:text-paper transition-colors"
-            >Careers</a
-          >
-
-          <a
-            href="index.html#contact"
-            class="nav-link hover:text-paper transition-colors"
-            >Contact</a
-          >
-        </nav>
-
-        <div class="flex items-center gap-3">
-          <a
-            href="index.html#contact"
-            class="hidden sm:inline-flex items-center gap-2 bg-brass hover:bg-brass-light text-navy font-mono text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brass/20"
-          >
-            Start a project
-          </a>
-
-          <button
-            id="menu-toggle"
-            class="lg:hidden text-paper p-2 -mr-2"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-            aria-label="Toggle navigation menu"
-          >
-            <svg
-              id="icon-open"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M4 7h16M4 12h16M4 17h16"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-              />
-            </svg>
-
-            <svg
-              id="icon-close"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              class="hidden"
-            >
-              <path
-                d="M6 6l12 12M18 6L6 18"
-                stroke="currentColor"
-                stroke-width="1.8"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div
-        id="mobile-menu"
-        class="lg:hidden overflow-hidden max-h-0 opacity-0 bg-navy-deep border-t border-cyan/10"
-      >
-        <nav
-          class="flex flex-col px-6 py-4 gap-1 font-mono text-sm uppercase tracking-wider text-slateline"
-          aria-label="Mobile"
-        >
-          <a
-            href="index.html#services"
-            class="py-3 border-b border-white/5 hover:text-brass transition-colors"
-            >Services</a
-          >
-
-          <a
-            href="index.html#process"
-            class="py-3 border-b border-white/5 hover:text-brass transition-colors"
-            >Process</a
-          >
-
-          <a
-            href="index.html#work"
-            class="py-3 border-b border-white/5 hover:text-brass transition-colors"
-            >Why Us</a
-          >
-
-          <a
-            href="careers.html"
-            class="py-3 border-b border-white/5 hover:text-brass transition-colors"
-            >Careers</a
-          >
-
-          <a
-            href="index.html#contact"
-            class="py-3 hover:text-brass transition-colors"
-            >Contact</a
-          >
-        </nav>
-      </div>
-    </header>
-
-    <main id="main-content">
-      <!-- ============ HEADER BANNER ============ -->
-
-      <section
-        class="bg-navy text-paper pt-36 pb-16 md:pt-44 md:pb-20 blueprint-grid border-b border-cyan/10"
-      >
-        <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center reveal">
-          <p
-            class="font-mono text-xs uppercase tracking-[0.3em] text-cyan mb-4 flex items-center justify-center gap-2"
-          >
-            <span class="w-2 h-2 rounded-full bg-cyan status-dot"></span>
-
-            Legal Framework<span class="cursor-blink">_</span>
-          </p>
-
-          <h1
-            class="font-display font-semibold text-4xl sm:text-5xl tracking-tight mb-4"
-          >
-            Terms of Service
-          </h1>
-
-          <p class="font-mono text-xs text-slateline uppercase tracking-wider">
-            Effective Date: October 1, 2026
-          </p>
-        </div>
-      </section>
-
-      <!-- ============ DOCUMENT CONTENT ============ -->
-
-      <section class="py-16 md:py-24 bg-paper">
-        <div class="max-w-3xl mx-auto px-5 sm:px-8 legal-doc reveal">
-          <p class="text-lg text-ink font-medium">
-            Please read these Terms of Service ("Terms") carefully. They
-            constitute a legally binding agreement between you and DYNAMONEXOVRA
-            TECHNOLOGY.
-          </p>
-
-          <hr class="my-8 border-navy/10" />
-
-          <h2>1. Introduction & Agreement</h2>
-
-          <p>
-            These Terms of Service govern the relationship between you (the
-            "Client") and DYNAMONEXOVRA TECHNOLOGY, a registered partnership
-            firm headquartered in Auraiya, Uttar Pradesh ("Company", "we", "us",
-            or "our"). By engaging our services, accessing our website, or
-            signing a Statement of Work (SOW), you agree to be bound by these
-            Terms.
-          </p>
-
-          <p>
-            If you are entering into these Terms on behalf of a company,
-            organization, or other legal entity, you represent that you have the
-            authority to bind such entity to these terms.
-          </p>
-
-          <h2>2. Scope of Services</h2>
-
-          <p>
-            We provide software engineering, web and mobile application
-            development, enterprise architecture, and IT consulting services.
-            The specific scope of work for any engagement will be explicitly
-            detailed in a mutually agreed-upon
-
-            <strong>Statement of Work (SOW)</strong> or
-
-            <strong>Scope Document</strong> prior to the commencement of any
-            engineering activities.
-          </p>
-
-          <ul>
-            <li>
-              <strong>Fixed-Scope Engagements:</strong> Work is delivered based
-              on the initial agreed-upon architecture and feature list.
-            </li>
-
-            <li>
-              <strong>Change Requests:</strong> Any features, modifications, or
-              requirements outside the original SOW will be treated as a Change
-              Request and subject to additional timelines and cost estimations.
-            </li>
-
-            <li>
-              <strong>No Skipped Steps:</strong> We enforce a strict pipeline
-              (Discovery, Architecture, Development, QA, Launch). The Client
-              agrees to provide timely feedback and sign-offs at each stage to
-              prevent project delays.
-            </li>
-          </ul>
-
-          <h2>3. Payment & Billing Terms</h2>
-
-          <p>
-            Pricing for our services is structured as per the signed proposal.
-            We operate on milestone-based billing for fixed-scope projects,
-            ensuring transparency and accountability.
-          </p>
-
-          <ul>
-            <li>
-              Invoices are payable within
-
-              <strong>seven (7) calendar days</strong> of receipt unless
-              otherwise specified in your SOW.
-            </li>
-
-            <li>
-              A standard mobilization advance (typically 20-30%) is required
-              before the Discovery or Architecture phase commences.
-            </li>
-
-            <li>
-              Late payments may result in an immediate pause of development
-              sprints and suspension of staging environments until the balance
-              is cleared.
-            </li>
-          </ul>
-
-          <h2>4. Intellectual Property & Code Ownership</h2>
-
-          <p>
-            We believe that you should own what you pay for. Upon receipt of
-            full and final payment for a project milestone or completed project,
-            all intellectual property rights for the custom source code,
-            documentation, and digital assets produced specifically for the
-            Client transfer completely to the Client.
-          </p>
-
-          <p>
-            <strong>Exceptions:</strong> DYNAMONEXOVRA TECHNOLOGY retains
-            ownership of any pre-existing proprietary libraries, open-source
-            integrations, and underlying frameworks used to build the software,
-            granting the Client a perpetual, royalty-free, non-exclusive license
-            to use these background technologies as part of the delivered
-            product.
-          </p>
-
-          <h2>5. Confidentiality & NDA-First Policy</h2>
-
-          <p>
-            We prioritize the security of your trade secrets. All engagements
-            operate under a default Non-Disclosure framework. The Company agrees
-            to hold all Client data, business strategies, and proprietary
-            information in strict confidence and will not disclose it to third
-            parties without prior written consent, except as required by law.
-          </p>
-
-          <h2>6. Warranties & Post-Launch Support</h2>
-
-          <p>
-            We build reliable technology, and we stand by our code. Every
-            delivered project includes a designated
-
-            <strong>Post-Launch Support Window</strong> (typically 30 to 60
-            days, as defined in your SOW) to address any bugs, defects, or
-            deviations from the signed architecture document.
-          </p>
-
-          <p>
-            <strong>Disclaimer of Additional Warranties:</strong> Outside of the
-            explicitly defined support window and SLA, all software is provided
-            "AS IS." We disclaim all other warranties, express or implied,
-            including fitness for a particular purpose, to the maximum extent
-            permitted by applicable law.
-          </p>
-
-          <h2>7. Limitation of Liability</h2>
-
-          <p>
-            In no event shall DYNAMONEXOVRA TECHNOLOGY, its partners, engineers,
-            or affiliates be liable for any indirect, incidental, special,
-            consequential, or punitive damages, including loss of profits, data,
-            or business opportunities arising out of or related to our services.
-            Our total liability for any claim arising from an engagement shall
-            not exceed the total amount paid by the Client to us under the
-            specific SOW giving rise to the claim.
-          </p>
-
-          <h2>8. Termination</h2>
-
-          <p>
-            Either party may terminate a project with a 15-day written notice.
-            In the event of early termination by the Client, the Client remains
-            liable to pay for all engineering hours, architecture design, and
-            services rendered up to the date of termination. Upon termination
-            and settlement of outstanding invoices, we will hand over all
-            completed work and documentation.
-          </p>
-
-          <h2>9. Governing Law & Jurisdiction</h2>
-
-          <p>
-            These Terms and any separate agreements whereby we provide you
-            Services shall be governed by and construed in accordance with the
-            laws of India. Any disputes arising out of these Terms shall be
-            subject to the exclusive jurisdiction of the courts located in Uttar
-            Pradesh, India.
-          </p>
-
-          <hr class="my-10 border-navy/10" />
-
-          <p
-            class="text-sm font-mono uppercase tracking-wider text-graphite mb-2"
-          >
-            Contacting Us
-          </p>
-
-          <p class="text-sm">
-            If you have any questions regarding these Terms, please contact our
-            legal team at
-
-            <a
-              href="mailto:legal@dynamonexovra.com"
-              class="text-brass hover:underline"
-              >legal@dynamonexovra.com</a
-            >.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <!-- ============ FOOTER ============ -->
-    <footer
-      class="site-footer bg-navy-deep text-slateline border-t border-blue-100"
-    >
-      <div class="footer-grid max-w-7xl mx-auto px-5 sm:px-8 py-12">
-        <!-- About -->
-        <div class="footer-about">
-          <a href="index.html" class="footer-brand">
-            DYNAMONEXOVRA
-            TECHNOLOGY
-          </a>
-          <p class="footer-description">
-            A software development and technology consulting company delivering
-            reliable digital products and engineering solutions.
-          </p>
-        </div>
-
-        <!-- Services -->
-        <div class="footer-column">
-          <h2>Services</h2>
-          <ul>
-            <li><a href="index.html#services">IT Consulting</a></li>
-            <li><a href="index.html#services">Software Development</a></li>
-            <li><a href="index.html#services">Cloud Solutions</a></li>
-            <li><a href="index.html#services">Project Outsourcing</a></li>
-            <li><a href="index.html#services">Cybersecurity Services</a></li>
-            <li><a href="careers.html">Careers</a></li>
-          </ul>
-        </div>
-
-        <!-- Legal -->
-        <div class="footer-column">
-          <h2>Legal &amp; Policies</h2>
-          <ul>
-            <li>
-              <a href="terms.html" aria-current="page"
-                >Terms &amp; Conditions</a
-              >
-            </li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-column footer-contact">
-          <h2>Contact Us</h2>
-          <div class="contact-lines">
-            <p>
-              <strong>Address:</strong>
-              <span
-                >182 Bheekhampur, Auraiya, Uttar Pradesh — 206122, India</span
-              >
-            </p>
-            <p>
-              <strong>Support:</strong>
-              <a href="mailto:support@dynamonexovra.com"
-                >support@dynamonexovra.com</a
-              >
-            </p>
-            <p>
-              <strong>Business:</strong>
-              <a href="mailto:contact@dynamonexovra.com"
-                >contact@dynamonexovra.com</a
-              >
-            </p>
-          </div>
-          <div class="footer-social" aria-label="Social media links">
-            <a
-              href="https://facebook.com/dynamonexovra"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Facebook</a
-            >
-            <a
-              href="https://www.linkedin.com/company/dynamonexovratechnology/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >LinkedIn</a
-            >
-            <a
-              href="https://instagram.com/dynamonexovra"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Instagram</a
-            >
-            <a
-              href="https://twitter.com/dynamonexovra"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Twitter</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom max-w-7xl mx-auto px-5 sm:px-8">
-        <p>
-          &copy; <span id="year"></span> DYNAMONEXOVRA TECHNOLOGY. All rights
-          reserved.
-        </p>
-        <p>Terms of Service · Privacy · Auraiya, Uttar Pradesh</p>
-      </div>
-    </footer>
-
-    <style>
-      /* Footer follows the site's blue-and-white visual theme */
-      .site-footer {
-        background: #0f2a75;
-        color: #dbe5ff;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns:
-          minmax(0, 1.35fr) minmax(0, 0.9fr) minmax(0, 0.9fr)
-          minmax(0, 1.35fr);
-        gap: 32px;
-        align-items: start;
-      }
-      .footer-brand {
-        display: inline-flex;
-        flex-direction: column;
-        color: #fff;
-        font-weight: 700;
-        font-size: 19px;
-        line-height: 1.25;
-        letter-spacing: 0.02em;
-      }
-      .footer-brand span {
-        color: #9db7ff;
-        display: inline;
-      }
-      .footer-brand small {
-        margin-top: 5px;
-        color: #b9c9f4;
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0.25em;
-      }
-      .footer-description {
-        margin-top: 16px;
-        max-width: 310px;
-        color: #dbe5ff;
-        font-size: 14px;
-        line-height: 1.8;
-      }
-      .footer-column h2 {
-        margin: 0 0 16px;
-        color: #fff;
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-      }
-      .footer-column ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .footer-column li {
-        margin-bottom: 10px;
-      }
-      .footer-column a {
-        color: #dbe5ff;
-        text-decoration: none;
-        transition:
-          color 0.2s ease,
-          opacity 0.2s ease;
-      }
-      .footer-column a:hover {
-        color: #fff;
-        opacity: 0.82;
-      }
-      .contact-lines {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 11px;
-        max-width: 100%;
-      }
-      .contact-lines p {
-        display: flex;
-        align-items: baseline;
-        gap: 5px;
-        margin: 0;
-        color: #dbe5ff;
-        font-size: 12px;
-        line-height: 1.65;
-        white-space: nowrap;
-      }
-      .contact-lines strong {
-        color: #fff;
-        flex-shrink: 0;
-      }
-      .contact-lines a,
-      .contact-lines span {
-        flex-shrink: 0;
-      }
-      .footer-social {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 13px;
-        margin-top: 18px;
-        padding-bottom: 5px;
-        max-width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-      }
-      .footer-social a {
-        flex: 0 0 auto;
-        font-size: 12px;
-      }
-      .footer-bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        border-top: 1px solid rgba(255, 255, 255, 0.16);
-        padding-top: 20px;
-        padding-bottom: 20px;
-        color: #c4d2f4;
-        font-size: 12px;
-      }
-      .footer-bottom p {
-        margin: 0;
-      }
-      @media (max-width: 1024px) {
-        .footer-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Terms of Service — DYNAMONEXOVRA TECHNOLOGY</title>
+      <meta
+        name="description"
+        content="Terms of Service governing engagements, payments, IP ownership, confidentiality and support with DYNAMONEXOVRA TECHNOLOGY."
+      />
+      <link rel="shortcut icon" href="./logo.jpeg" />
+      <!-- Tailwind is kept only because the (unchanged) footer is built with its utility classes -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+        :root {
+          --blue: #1f4fd8;
+          --blue-dark: #0f2a75;
+          --blue-soft: #eef3ff;
+          --sky: #f6f9ff;
+          --text: #1c2433;
+          --muted: #617089;
+          --line: #e4e9f2;
+          --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
         }
-        .footer-contact {
-          min-width: 0;
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
         }
-        .contact-lines {
-          width: max-content;
-          max-width: 100%;
+        html {
+          scroll-behavior: smooth;
+          scroll-padding-top: 100px;
         }
-      }
-      @media (max-width: 576px) {
-        .footer-grid {
-          grid-template-columns: minmax(0, 1fr);
-          gap: 28px;
-          padding-top: 34px;
-          padding-bottom: 28px;
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          background: #fff;
+          color: var(--text);
+          line-height: 1.65;
+          -webkit-font-smoothing: antialiased;
         }
-        .footer-description {
-          max-width: none;
+        a {
+          color: inherit;
+          text-decoration: none;
         }
-        .footer-contact {
-          min-width: 0;
+        ul,
+        ol {
+          list-style: none;
+        }
+        ::selection {
+          background: var(--blue);
+          color: #fff;
+        }
+        :focus-visible {
+          outline: 2px solid var(--blue);
+          outline-offset: 3px;
+        }
+        .wrap {
+          max-width: 1180px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
+        .skip {
+          position: absolute;
+          left: -999px;
+          top: 8px;
+          background: var(--blue);
+          color: #fff;
+          padding: 8px 14px;
+          z-index: 300;
+          border-radius: 6px;
+        }
+        .skip:focus {
+          left: 8px;
+        }
+
+        .btn,
+        .btn-o {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 14px 28px;
+          font-family: inherit;
+          font-size: 15px;
+          font-weight: 700;
+          border-radius: 50px;
+          border: 2px solid transparent;
+          cursor: pointer;
+          transition: all 0.35s var(--ease);
+        }
+        .btn {
+          background: var(--blue);
+          color: #fff;
+          box-shadow: 0 10px 24px -10px rgba(31, 79, 216, 0.7);
+        }
+        .btn:hover {
+          background: var(--blue-dark);
+          transform: translateY(-3px);
+          box-shadow: 0 18px 30px -12px rgba(15, 42, 117, 0.7);
+        }
+        .btn-o {
+          border-color: var(--blue);
+          color: var(--blue);
+          background: #fff;
+        }
+        .btn-o:hover {
+          background: var(--blue);
+          color: #fff;
+          transform: translateY(-3px);
+        }
+        .btn.sm,
+        .btn-o.sm {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+
+        #progress {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 3px;
+          width: 0;
+          background: var(--blue);
+          z-index: 200;
+          transition: width 0.1s linear;
+        }
+
+        /* Header */
+        #hdr {
+          position: fixed;
+          inset: 0 0 auto 0;
+          z-index: 100;
+          background: rgba(255, 255, 255, 0.92);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid transparent;
+          transition:
+            box-shadow 0.3s,
+            border-color 0.3s;
+        }
+        #hdr.scrolled {
+          box-shadow: 0 8px 28px -14px rgba(15, 42, 117, 0.35);
+          border-color: var(--line);
+        }
+        .bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 76px;
+        }
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .brand img {
+          width: 46px;
+          height: 46px;
+          object-fit: contain;
+          border-radius: 10px;
+        }
+        .brand b {
+          display: block;
+          font-size: 16px;
+          color: var(--blue-dark);
+          letter-spacing: 0.02em;
+        }
+        .brand b i {
+          color: var(--blue);
+          font-style: normal;
+        }
+        .brand small {
+          display: block;
+          font-size: 10px;
+          letter-spacing: 0.35em;
+          color: var(--muted);
+          margin-top: 2px;
+        }
+        nav.primary {
+          display: flex;
+          gap: 6px;
+        }
+        nav.primary a {
+          font-size: 14px;
+          font-weight: 700;
+          color: var(--muted);
+          padding: 9px 14px;
+          border-radius: 30px;
+          transition: all 0.3s;
+        }
+        nav.primary a:hover,
+        nav.primary a.active {
+          background: var(--blue-soft);
+          color: var(--blue);
+        }
+        .actions {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+        #menu-toggle {
+          display: none;
+          background: var(--blue-soft);
+          border: 0;
+          color: var(--blue);
+          cursor: pointer;
+          padding: 9px;
+          border-radius: 10px;
+        }
+        #mobile-menu {
+          display: none;
+          overflow: hidden;
+          max-height: 0;
+          opacity: 0;
+          background: #fff;
+          transition:
+            max-height 0.45s var(--ease),
+            opacity 0.35s;
+        }
+        #mobile-menu nav {
+          display: flex;
+          flex-direction: column;
+          padding: 6px 24px 22px;
+        }
+        #mobile-menu a {
+          padding: 14px 0;
+          border-bottom: 1px solid var(--line);
+          font-weight: 700;
+          color: var(--blue-dark);
+        }
+        #mobile-menu a.btn {
+          margin-top: 16px;
+          color: #fff;
+          border: 0;
+          justify-content: center;
+        }
+
+        /* Hero */
+        .hero {
+          position: relative;
+          padding: 150px 0 70px;
+          background: linear-gradient(180deg, var(--sky), #fff);
+          overflow: hidden;
+          text-align: center;
+        }
+        .blob {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(70px);
+          opacity: 0.55;
+          animation: drift 16s ease-in-out infinite;
+        }
+        .blob.a {
+          width: 380px;
+          height: 380px;
+          background: #cfe0ff;
+          left: -110px;
+          top: 30px;
+        }
+        .blob.b {
+          width: 320px;
+          height: 320px;
+          background: #dfe9ff;
+          right: -90px;
+          top: 90px;
+          animation-delay: -7s;
+        }
+        @keyframes drift {
+          50% {
+            transform: translate(40px, 30px) scale(1.1);
+          }
+        }
+        .hero .in {
+          position: relative;
+          max-width: 780px;
+          margin: 0 auto;
+        }
+        .pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: #fff;
+          border: 1px solid var(--line);
+          padding: 8px 18px;
+          border-radius: 40px;
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--blue);
+          box-shadow: 0 8px 20px -14px rgba(15, 42, 117, 0.5);
+        }
+        .dot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: #22b573;
+          animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(34, 181, 115, 0.55);
+          }
+          70% {
+            box-shadow: 0 0 0 10px rgba(34, 181, 115, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(34, 181, 115, 0);
+          }
+        }
+        .hero h1 {
+          margin-top: 22px;
+          font-size: clamp(36px, 5.5vw, 58px);
+          font-weight: 700;
+          line-height: 1.1;
+          letter-spacing: -0.025em;
+          color: var(--blue-dark);
+        }
+        .hero h1 span {
+          color: var(--blue);
+          background: linear-gradient(transparent 82%, #cfe0ff 82%);
+        }
+        .hero p.sub {
+          margin: 18px auto 0;
+          font-size: 17px;
+          color: var(--muted);
+          max-width: 660px;
+        }
+        .meta {
+          margin-top: 26px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: center;
+        }
+        .meta span {
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 40px;
+          padding: 8px 18px;
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--blue-dark);
+        }
+        .anim {
+          opacity: 0;
+          transform: translateY(26px);
+          animation: rise 0.9s var(--ease) forwards;
+        }
+        .d1 {
+          animation-delay: 0.05s;
+        }
+        .d2 {
+          animation-delay: 0.2s;
+        }
+        .d3 {
+          animation-delay: 0.35s;
+        }
+        .d4 {
+          animation-delay: 0.5s;
+        }
+        @keyframes rise {
+          to {
+            opacity: 1;
+            transform: none;
+          }
+        }
+
+        /* Summary */
+        .sumgrid {
+          margin-top: -10px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 18px;
+        }
+        .sc {
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          padding: 24px 22px;
+          box-shadow: 0 24px 40px -30px rgba(15, 42, 117, 0.5);
+          transition: all 0.4s var(--ease);
+        }
+        .sc .ic {
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          background: var(--blue-soft);
+          color: var(--blue);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 14px;
+          transition: all 0.4s var(--ease);
+        }
+        .sc h3 {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1.25;
+          color: var(--blue-dark);
+          margin-bottom: 4px;
+        }
+        .sc p {
+          font-size: 13px;
+          color: var(--muted);
+        }
+        .sc:hover {
+          transform: translateY(-8px);
+          border-color: var(--blue);
+          box-shadow: 0 30px 44px -28px rgba(15, 42, 117, 0.55);
+        }
+        .sc:hover .ic {
+          background: var(--blue);
+          color: #fff;
+          transform: rotate(-8deg) scale(1.1);
+        }
+
+        /* Layout */
+        .layout {
+          padding: 70px 0 100px;
+          display: grid;
+          grid-template-columns: 270px 1fr;
+          gap: 56px;
+          align-items: start;
+        }
+        aside.toc {
+          position: sticky;
+          top: 100px;
+        }
+        .toc-box {
+          background: var(--sky);
+          border: 1px solid var(--line);
+          border-radius: 18px;
+          padding: 22px;
+        }
+        .toc-box h4 {
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--blue);
+          margin-bottom: 12px;
+        }
+        .toc-box nav a {
+          display: flex;
+          gap: 10px;
+          padding: 9px 12px;
+          border-radius: 10px;
+          font-size: 14px;
+          color: var(--muted);
+          font-weight: 700;
+          border-left: 3px solid transparent;
+          transition: all 0.3s var(--ease);
+        }
+        .toc-box nav a b {
+          color: var(--blue);
+          min-width: 20px;
+        }
+        .toc-box nav a:hover {
+          background: #fff;
+          color: var(--blue-dark);
+          transform: translateX(4px);
+        }
+        .toc-box nav a.on {
+          background: #fff;
+          color: var(--blue);
+          border-left-color: var(--blue);
+          box-shadow: 0 10px 20px -16px rgba(15, 42, 117, 0.6);
+        }
+        .tools {
+          margin-top: 16px;
+          display: flex;
+          gap: 10px;
+        }
+        .tools .btn-o {
+          flex: 1;
+          padding: 10px 12px;
+          font-size: 13px;
+        }
+
+        /* Document */
+        .doc > p.intro {
+          font-size: 19px;
+          color: var(--text);
+          margin-bottom: 36px;
+          padding: 26px 28px;
+          background: var(--sky);
+          border-left: 5px solid var(--blue);
+          border-radius: 0 16px 16px 0;
+        }
+        .sec {
+          margin-bottom: 22px;
+          background: #fff;
+          border: 1px solid var(--line);
+          border-radius: 20px;
+          padding: 34px 36px;
+          transition: all 0.4s var(--ease);
+          position: relative;
           overflow: hidden;
         }
-        .contact-lines {
+        .sec::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 3px;
+          width: 0;
+          background: var(--blue);
+          transition: width 0.6s var(--ease);
+        }
+        .sec:hover {
+          box-shadow: 0 30px 46px -32px rgba(15, 42, 117, 0.5);
+          border-color: #c8d6f5;
+        }
+        .sec:hover::before {
           width: 100%;
-          max-width: 100%;
-          overflow-x: auto;
-          padding-bottom: 5px;
         }
-        .contact-lines p {
-          font-size: 12px;
-        }
-        .footer-social {
+        .sec h2 {
+          display: flex;
+          align-items: center;
           gap: 14px;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 1.25;
+          color: var(--blue-dark);
+          margin-bottom: 16px;
         }
-        .footer-bottom {
-          flex-direction: column;
-          align-items: flex-start;
-          font-size: 11px;
+        .sec h2 .n {
+          flex: none;
+          width: 42px;
+          height: 42px;
+          border-radius: 12px;
+          background: var(--blue-soft);
+          color: var(--blue);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          transition: all 0.4s var(--ease);
         }
-      }
-    </style>
+        .sec:hover h2 .n {
+          background: var(--blue);
+          color: #fff;
+          transform: rotate(-8deg);
+        }
+        .sec p {
+          color: var(--muted);
+          margin-bottom: 14px;
+          font-size: 15.5px;
+        }
+        .sec ul {
+          margin: 0 0 10px;
+        }
+        .sec li {
+          position: relative;
+          padding-left: 24px;
+          margin-bottom: 10px;
+          color: var(--muted);
+          font-size: 15.5px;
+        }
+        .sec li::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 9px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--blue);
+        }
+        .sec strong {
+          color: var(--text);
+        }
+        .sec a.lnk {
+          color: var(--blue);
+          font-weight: 700;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.3s;
+        }
+        .sec a.lnk:hover {
+          border-color: var(--blue);
+        }
+        .note {
+          margin-top: 8px;
+          background: var(--blue-soft);
+          border-radius: 12px;
+          padding: 16px 18px;
+          font-size: 14.5px;
+          color: var(--blue-dark);
+        }
+        .tblw {
+          overflow-x: auto;
+          margin: 6px 0 4px;
+        }
+        .tbl {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          font-size: 14.5px;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          overflow: hidden;
+        }
+        .tbl th {
+          background: var(--blue-soft);
+          color: var(--blue-dark);
+          text-align: left;
+          padding: 12px 16px;
+          font-size: 12px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+        .tbl td {
+          padding: 13px 16px;
+          border-top: 1px solid var(--line);
+          color: var(--muted);
+          vertical-align: top;
+        }
+        .tbl tbody tr {
+          transition: background 0.3s;
+        }
+        .tbl tbody tr:hover {
+          background: var(--sky);
+        }
 
-    <script>
-      const yearElement = document.getElementById("year");
-      if (yearElement) yearElement.textContent = new Date().getFullYear();
-    </script>
+        /* Pipeline */
+        .pipe {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 10px;
+          margin: 8px 0 18px;
+          position: relative;
+        }
+        .pipe li {
+          margin: 0;
+          padding: 16px 8px 14px;
+          text-align: center;
+          background: var(--sky);
+          border: 1px solid var(--line);
+          border-radius: 14px;
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--blue-dark);
+          transition: all 0.4s var(--ease);
+        }
+        .pipe li::before {
+          display: none;
+        }
+        .pipe li span {
+          display: flex;
+          width: 30px;
+          height: 30px;
+          margin: 0 auto 8px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: #fff;
+          border: 2px solid var(--blue);
+          color: var(--blue);
+          font-size: 12px;
+          transition: all 0.4s var(--ease);
+        }
+        .pipe li:hover {
+          transform: translateY(-5px);
+          border-color: var(--blue);
+          box-shadow: 0 18px 28px -20px rgba(15, 42, 117, 0.6);
+        }
+        .pipe li:hover span {
+          background: var(--blue);
+          color: #fff;
+        }
 
-    <button
-      id="back-to-top"
-      aria-label="Back to top"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brass text-white flex items-center justify-center opacity-0 pointer-events-none translate-y-3 shadow-lg"
-    >
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M9 14V4M4 9l5-5 5 5"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-  </body>
+        .contact {
+          margin-top: 10px;
+          background: linear-gradient(120deg, var(--blue-dark), var(--blue));
+          color: #fff;
+          border-radius: 22px;
+          padding: 38px;
+          position: relative;
+          overflow: hidden;
+        }
+        .contact::before {
+          content: "";
+          position: absolute;
+          width: 260px;
+          height: 260px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          right: -70px;
+          top: -90px;
+          animation: drift 14s ease-in-out infinite;
+        }
+        .contact h3 {
+          color: #fff;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 8px;
+          position: relative;
+        }
+        .contact p {
+          color: #d6e2ff;
+          margin-bottom: 20px;
+          position: relative;
+          font-size: 15px;
+        }
+        .contact .btn {
+          background: #fff;
+          color: var(--blue-dark);
+          box-shadow: none;
+          position: relative;
+        }
+        .contact .btn:hover {
+          background: var(--blue-soft);
+        }
+
+        #back-to-top {
+          position: fixed;
+          right: 24px;
+          bottom: 24px;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 0;
+          background: var(--blue);
+          color: #fff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 12px 26px -8px rgba(31, 79, 216, 0.8);
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(14px);
+          transition: all 0.35s var(--ease);
+          z-index: 90;
+        }
+        #back-to-top.show {
+          opacity: 1;
+          pointer-events: auto;
+          transform: none;
+        }
+        #back-to-top:hover {
+          background: var(--blue-dark);
+          transform: translateY(-4px);
+        }
+
+        .reveal {
+          opacity: 0;
+          transform: translateY(32px);
+          transition:
+            opacity 0.8s var(--ease),
+            transform 0.8s var(--ease);
+        }
+        .reveal.in {
+          opacity: 1;
+          transform: none;
+        }
+        .sumgrid .reveal:nth-child(4n + 2) {
+          transition-delay: 0.1s;
+        }
+        .sumgrid .reveal:nth-child(4n + 3) {
+          transition-delay: 0.2s;
+        }
+        .sumgrid .reveal:nth-child(4n) {
+          transition-delay: 0.3s;
+        }
+
+        @media (max-width: 1024px) {
+          nav.primary,
+          .actions .btn {
+            display: none;
+          }
+          #menu-toggle {
+            display: block;
+          }
+          #mobile-menu {
+            display: block;
+          }
+          .sumgrid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .layout {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+          aside.toc {
+            position: static;
+          }
+          .toc-box nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+          }
+        }
+        @media (max-width: 700px) {
+          .hero {
+            padding-top: 125px;
+          }
+          .sumgrid,
+          .toc-box nav {
+            grid-template-columns: 1fr;
+          }
+          .sec {
+            padding: 26px 22px;
+          }
+          .sec h2 {
+            font-size: 21px;
+          }
+          .pipe {
+            grid-template-columns: 1fr 1fr;
+          }
+          .contact {
+            padding: 28px 24px;
+          }
+        }
+        @media print {
+          #hdr,
+          aside.toc,
+          #back-to-top,
+          #progress,
+          .blob,
+          .sum,
+          footer {
+            display: none !important;
+          }
+          .hero {
+            padding: 20px 0;
+          }
+          .reveal {
+            opacity: 1 !important;
+            transform: none !important;
+          }
+          .layout {
+            grid-template-columns: 1fr;
+          }
+          .sec {
+            border: 0;
+            padding: 10px 0;
+            break-inside: avoid;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+          *,
+          *::before,
+          *::after {
+            animation: none !important;
+            transition: none !important;
+          }
+          .reveal,
+          .anim {
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div id="progress"></div>
+      <a href="#main-content" class="skip">Skip to main content</a>
+
+      <!-- HEADER -->
+      <header id="hdr">
+        <div class="wrap bar">
+          <a
+            href="index.html"
+            class="brand"
+            aria-label="DYNAMONEXOVRA TECHNOLOGY — home"
+          >
+            <img src="./logo.jpeg" alt="DYNAMONEXOVRA TECHNOLOGY" />
+            <span
+              ><b>DYNAMONEXOVRA<i>.</i></b
+              ><small>TECHNOLOGY</small></span
+            >
+          </a>
+          <nav class="primary" aria-label="Primary">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#why-us">Why Us</a>
+            <a href="careers.html">Careers</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+          <div class="actions">
+            <a href="index.html#contact" class="btn sm">Start a project</a>
+            <button
+              id="menu-toggle"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
+            >
+              <svg
+                id="icon-open"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <svg
+                id="icon-close"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                style="display: none"
+              >
+                <path
+                  d="M6 6l12 12M18 6L6 18"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu">
+          <nav aria-label="Mobile">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#why-us">Why Us</a>
+            <a href="careers.html">Careers</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#contact" class="btn">Start a project</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <!-- HERO -->
+        <section class="hero" id="top">
+          <div class="blob a"></div>
+          <div class="blob b"></div>
+          <div class="wrap">
+            <div class="in">
+              <span class="pill anim d1"
+                ><span class="dot"></span>Legal Framework</span
+              >
+              <h1 class="anim d2">Terms of <span>Service</span></h1>
+              <p class="sub anim d3">
+                The clear, fair terms that govern every engagement, from scope
+                and billing to code ownership and support.
+              </p>
+              <div class="meta anim d4">
+                <span>Effective Date: October 1, 2026</span
+                ><span>Governed by Indian law</span
+                ><span>Reading time: ~5 min</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section>
+          <div class="wrap">
+            <div class="sumgrid">
+              <div class="sc reveal">
+                <div class="ic">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 10h18" />
+                  </svg>
+                </div>
+                <h3>Milestone billing</h3>
+                <p>Invoices payable within seven (7) calendar days.</p>
+              </div>
+              <div class="sc reveal">
+                <div class="ic">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 6l-4 12" />
+                  </svg>
+                </div>
+                <h3>You own your code</h3>
+                <p>IP transfers to you on full and final payment.</p>
+              </div>
+              <div class="sc reveal">
+                <div class="ic">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
+                <h3>NDA-first</h3>
+                <p>Every engagement is confidential by default.</p>
+              </div>
+              <div class="sc reveal">
+                <div class="ic">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.4 2.4-2.1-.6-.6-2.1 2.4-2.4z"
+                    />
+                  </svg>
+                </div>
+                <h3>Post-launch support</h3>
+                <p>A 30 to 60 day window, as defined in your SOW.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DOCUMENT -->
+        <div class="wrap layout">
+          <aside class="toc">
+            <div class="toc-box">
+              <h4>On this page</h4>
+              <nav aria-label="Table of contents" id="toc">
+                <a href="#s1" class="on"
+                  ><b>1</b>Introduction &amp; Agreement</a
+                >
+                <a href="#s2"><b>2</b>Scope of Services</a>
+                <a href="#s3"><b>3</b>Payment &amp; Billing</a>
+                <a href="#s4"><b>4</b>IP &amp; Code Ownership</a>
+                <a href="#s5"><b>5</b>Confidentiality &amp; NDA</a>
+                <a href="#s6"><b>6</b>Warranties &amp; Support</a>
+                <a href="#s7"><b>7</b>Limitation of Liability</a>
+                <a href="#s8"><b>8</b>Termination</a>
+                <a href="#s9"><b>9</b>Governing Law</a>
+                <a href="#s10"><b>10</b>Contacting Us</a>
+              </nav>
+              <div class="tools">
+                <button class="btn-o" id="print-btn" type="button">Print</button
+                ><a href="privacy.html" class="btn-o">Privacy</a>
+              </div>
+            </div>
+          </aside>
+
+          <article class="doc">
+            <p class="intro reveal">
+              Please read these Terms of Service ("Terms") carefully. They
+              constitute a legally binding agreement between you and
+              DYNAMONEXOVRA TECHNOLOGY.
+            </p>
+
+            <section class="sec reveal" id="s1">
+              <h2><span class="n">1</span>Introduction &amp; Agreement</h2>
+              <p>
+                These Terms of Service govern the relationship between you (the
+                "Client") and DYNAMONEXOVRA TECHNOLOGY, a registered partnership
+                firm headquartered in Auraiya, Uttar Pradesh ("Company", "we",
+                "us", or "our"). By engaging our services, accessing our
+                website, or signing a Statement of Work (SOW), you agree to be
+                bound by these Terms.
+              </p>
+              <p>
+                If you are entering into these Terms on behalf of a company,
+                organization, or other legal entity, you represent that you have
+                the authority to bind such entity to these terms.
+              </p>
+            </section>
+
+            <section class="sec reveal" id="s2">
+              <h2><span class="n">2</span>Scope of Services</h2>
+              <p>
+                We provide software engineering, web and mobile application
+                development, enterprise architecture, and IT consulting
+                services. The specific scope of work for any engagement will be
+                explicitly detailed in a mutually agreed-upon
+                <strong>Statement of Work (SOW)</strong> or
+                <strong>Scope Document</strong> prior to the commencement of any
+                engineering activities.
+              </p>
+              <ul>
+                <li>
+                  <strong>Fixed-Scope Engagements:</strong> Work is delivered
+                  based on the initial agreed-upon architecture and feature
+                  list.
+                </li>
+                <li>
+                  <strong>Change Requests:</strong> Any features, modifications,
+                  or requirements outside the original SOW will be treated as a
+                  Change Request and subject to additional timelines and cost
+                  estimations.
+                </li>
+                <li>
+                  <strong>No Skipped Steps:</strong> We enforce a strict
+                  pipeline (Discovery, Architecture, Development, QA, Launch).
+                  The Client agrees to provide timely feedback and sign-offs at
+                  each stage to prevent project delays.
+                </li>
+              </ul>
+              <ol class="pipe" aria-label="Delivery pipeline">
+                <li><span>1</span>Discovery</li>
+                <li><span>2</span>Architecture</li>
+                <li><span>3</span>Development</li>
+                <li><span>4</span>QA</li>
+                <li><span>5</span>Launch</li>
+              </ol>
+            </section>
+
+            <section class="sec reveal" id="s3">
+              <h2><span class="n">3</span>Payment &amp; Billing Terms</h2>
+              <p>
+                Pricing for our services is structured as per the signed
+                proposal. We operate on milestone-based billing for fixed-scope
+                projects, ensuring transparency and accountability.
+              </p>
+              <ul>
+                <li>
+                  Invoices are payable within
+                  <strong>seven (7) calendar days</strong> of receipt unless
+                  otherwise specified in your SOW.
+                </li>
+                <li>
+                  A standard mobilization advance (typically 20-30%) is required
+                  before the Discovery or Architecture phase commences.
+                </li>
+                <li>
+                  Late payments may result in an immediate pause of development
+                  sprints and suspension of staging environments until the
+                  balance is cleared.
+                </li>
+              </ul>
+              <div class="tblw">
+                <table class="tbl">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Standard term</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Billing model</td>
+                      <td>Milestone-based, for fixed-scope projects</td>
+                    </tr>
+                    <tr>
+                      <td>Invoice payment</td>
+                      <td>
+                        Within 7 calendar days of receipt (unless the SOW says
+                        otherwise)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Mobilization advance</td>
+                      <td>
+                        Typically 20-30%, before Discovery or Architecture
+                        begins
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Late payment</td>
+                      <td>
+                        Development sprints paused and staging suspended until
+                        cleared
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="sec reveal" id="s4">
+              <h2>
+                <span class="n">4</span>Intellectual Property &amp; Code
+                Ownership
+              </h2>
+              <p>
+                We believe that you should own what you pay for. Upon receipt of
+                full and final payment for a project milestone or completed
+                project, all intellectual property rights for the custom source
+                code, documentation, and digital assets produced specifically
+                for the Client transfer completely to the Client.
+              </p>
+              <p>
+                <strong>Exceptions:</strong> DYNAMONEXOVRA TECHNOLOGY retains
+                ownership of any pre-existing proprietary libraries, open-source
+                integrations, and underlying frameworks used to build the
+                software, granting the Client a perpetual, royalty-free,
+                non-exclusive license to use these background technologies as
+                part of the delivered product.
+              </p>
+            </section>
+
+            <section class="sec reveal" id="s5">
+              <h2>
+                <span class="n">5</span>Confidentiality &amp; NDA-First Policy
+              </h2>
+              <p>
+                We prioritize the security of your trade secrets. All
+                engagements operate under a default Non-Disclosure framework.
+                The Company agrees to hold all Client data, business strategies,
+                and proprietary information in strict confidence and will not
+                disclose it to third parties without prior written consent,
+                except as required by law.
+              </p>
+            </section>
+
+            <section class="sec reveal" id="s6">
+              <h2>
+                <span class="n">6</span>Warranties &amp; Post-Launch Support
+              </h2>
+              <p>
+                We build reliable technology, and we stand by our code. Every
+                delivered project includes a designated
+                <strong>Post-Launch Support Window</strong> (typically 30 to 60
+                days, as defined in your SOW) to address any bugs, defects, or
+                deviations from the signed architecture document.
+              </p>
+              <p>
+                <strong>Disclaimer of Additional Warranties:</strong> Outside of
+                the explicitly defined support window and SLA, all software is
+                provided "AS IS." We disclaim all other warranties, express or
+                implied, including fitness for a particular purpose, to the
+                maximum extent permitted by applicable law.
+              </p>
+            </section>
+
+            <section class="sec reveal" id="s7">
+              <h2><span class="n">7</span>Limitation of Liability</h2>
+              <p>
+                In no event shall DYNAMONEXOVRA TECHNOLOGY, its partners,
+                engineers, or affiliates be liable for any indirect, incidental,
+                special, consequential, or punitive damages, including loss of
+                profits, data, or business opportunities arising out of or
+                related to our services. Our total liability for any claim
+                arising from an engagement shall not exceed the total amount
+                paid by the Client to us under the specific SOW giving rise to
+                the claim.
+              </p>
+            </section>
+
+            <section class="sec reveal" id="s8">
+              <h2><span class="n">8</span>Termination</h2>
+              <p>
+                Either party may terminate a project with a 15-day written
+                notice. In the event of early termination by the Client, the
+                Client remains liable to pay for all engineering hours,
+                architecture design, and services rendered up to the date of
+                termination. Upon termination and settlement of outstanding
+                invoices, we will hand over all completed work and
+                documentation.
+              </p>
+              <div class="tblw">
+                <table class="tbl">
+                  <thead>
+                    <tr>
+                      <th>Stage</th>
+                      <th>What happens</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Notice</td>
+                      <td>Either party gives 15 days' written notice</td>
+                    </tr>
+                    <tr>
+                      <td>Settlement</td>
+                      <td>
+                        Client pays for engineering hours, architecture design
+                        and services rendered to the termination date
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Handover</td>
+                      <td>
+                        Completed work and documentation delivered once invoices
+                        are settled
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="sec reveal" id="s9">
+              <h2><span class="n">9</span>Governing Law &amp; Jurisdiction</h2>
+              <p>
+                These Terms and any separate agreements whereby we provide you
+                Services shall be governed by and construed in accordance with
+                the laws of India. Any disputes arising out of these Terms shall
+                be subject to the exclusive jurisdiction of the courts located
+                in Uttar Pradesh, India.
+              </p>
+            </section>
+
+            <section class="sec reveal" id="s10">
+              <h2><span class="n">10</span>Contacting Us</h2>
+              <p>
+                If you have any questions regarding these Terms, please contact
+                our legal team.
+              </p>
+              <div class="tblw">
+                <table class="tbl">
+                  <tbody>
+                    <tr>
+                      <td><strong>Email</strong></td>
+                      <td>
+                        <a class="lnk" href="mailto:legal@dynamonexovra.com"
+                          >legal@dynamonexovra.com</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Headquarters</strong></td>
+                      <td>Auraiya, Uttar Pradesh, India</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <div class="contact reveal">
+              <h3>Questions about these Terms?</h3>
+              <p>
+                Our legal team is happy to walk you through any clause before
+                you sign.
+              </p>
+              <a href="mailto:legal@dynamonexovra.com" class="btn"
+                >legal@dynamonexovra.com</a
+              >
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <!-- ============ FOOTER ============ -->
+      <!-- FOOTER -->
+      <!-- ==================== FOOTER ==================== -->
+      <footer class="bg-slate-950 text-slate-300">
+        <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
+          <!-- Footer Grid -->
+          <div
+            class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+          >
+            <!-- Company About -->
+            <div>
+              <a
+                href="#top"
+                class="inline-block text-xl font-extrabold tracking-tight text-white transition hover:text-indigo-400"
+              >
+                DYNAMONEXOVRA<span class="text-indigo-500">.</span>
+                <span
+                  class="block text-xs font-semibold tracking-[0.25em] text-slate-400"
+                >
+                  TECHNOLOGY
+                </span>
+              </a>
+
+              <p class="mt-5 text-sm leading-7 text-slate-400">
+                Dynamonexovra delivers consulting solutions for global
+                organizations, with a focus on human resources, technology, and
+                operational excellence.
+              </p>
+
+              <p class="mt-4 text-sm leading-7 text-slate-400">
+                We help businesses reduce costs, optimize resources, and improve
+                profitability through effective management and organizational
+                efficiency.
+              </p>
+            </div>
+
+            <!-- Services -->
+            <div>
+              <h4 class="mb-5 text-base font-bold text-white">Our Services</h4>
+
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a href="#services" class="transition hover:text-indigo-400"
+                    >IT Consulting</a
+                  >
+                </li>
+                <li>
+                  <a href="#services" class="transition hover:text-indigo-400"
+                    >Software Development</a
+                  >
+                </li>
+                <li>
+                  <a href="#services" class="transition hover:text-indigo-400"
+                    >Cloud Solutions</a
+                  >
+                </li>
+                <li>
+                  <a href="#services" class="transition hover:text-indigo-400"
+                    >Project Outsourcing</a
+                  >
+                </li>
+                <li>
+                  <a href="#services" class="transition hover:text-indigo-400"
+                    >Business Consulting</a
+                  >
+                </li>
+                <li>
+                  <a href="#services" class="transition hover:text-indigo-400"
+                    >Cybersecurity Services</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Legal & Policies -->
+            <div>
+              <h4 class="mb-5 text-base font-bold text-white">
+                Legal &amp; Policies
+              </h4>
+
+              <ul class="space-y-3 text-sm">
+                <li>
+                  <a
+                    href="./terms.html"
+                    class="transition hover:text-indigo-400"
+                  >
+                    Terms &amp; Conditions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./privacy.html"
+                    class="transition hover:text-indigo-400"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="mb-5 text-base font-bold text-white">Contact Us</h4>
+
+              <div class="space-y-4 text-sm">
+                <p class="leading-6">
+                  <span class="block font-semibold text-white">Address</span>
+                  <span class="text-slate-400">West Chester, PA</span>
+                </p>
+
+                <p class="leading-6">
+                  <span class="block font-semibold text-white"
+                    >Support Email</span
+                  >
+                  <a
+                    href="mailto:support@dynamonexovra.com"
+                    class="break-words transition hover:text-indigo-400"
+                  >
+                    support@dynamonexovra.com
+                  </a>
+                </p>
+
+                <p class="leading-6">
+                  <span class="block font-semibold text-white"
+                    >Business Email</span
+                  >
+                  <a
+                    href="mailto:contact@dynamonexovra.com"
+                    class="break-words transition hover:text-indigo-400"
+                  >
+                    contact@dynamonexovra.com
+                  </a>
+                </p>
+              </div>
+
+              <!-- Social Media -->
+              <div class="mt-6">
+                <h5 class="mb-3 text-sm font-semibold text-white">Follow Us</h5>
+
+                <div class="flex flex-wrap gap-2">
+                  <a
+                    href="https://facebook.com/dynamonexovra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="rounded-lg border border-slate-800 px-3 py-2 text-xs font-medium transition hover:border-indigo-500 hover:bg-indigo-500/10 hover:text-white"
+                  >
+                    Facebook
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/dynamonexovratechnology/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    class="rounded-lg border border-slate-800 px-3 py-2 text-xs font-medium transition hover:border-indigo-500 hover:bg-indigo-500/10 hover:text-white"
+                  >
+                    LinkedIn
+                  </a>
+
+                  <a
+                    href="https://instagram.com/dynamonexovra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="rounded-lg border border-slate-800 px-3 py-2 text-xs font-medium transition hover:border-indigo-500 hover:bg-indigo-500/10 hover:text-white"
+                  >
+                    Instagram
+                  </a>
+
+                  <a
+                    href="https://twitter.com/dynamonexovra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                    class="rounded-lg border border-slate-800 px-3 py-2 text-xs font-medium transition hover:border-indigo-500 hover:bg-indigo-500/10 hover:text-white"
+                  >
+                    Twitter
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="mt-12 border-t border-slate-800"></div>
+
+          <!-- Copyright -->
+          <div
+            class="flex flex-col items-center justify-between gap-3 pt-6 text-center text-xs text-slate-500 sm:flex-row sm:text-left"
+          >
+            <p>
+              &copy; <span id="year"></span> Dynamonexovra Technology. All
+              rights reserved.
+            </p>
+
+            <a href="#top" class="font-medium transition hover:text-indigo-400">
+              Back to top ↑
+            </a>
+          </div>
+        </div>
+      </footer>
+
+      <button id="back-to-top" aria-label="Back to top">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M9 14V4M4 9l5-5 5 5"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <script>
+        const $ = (s, r = document) => r.querySelector(s),
+          $$ = (s, r = document) => [...r.querySelectorAll(s)];
+        // Mobile menu
+        const mt = $("#menu-toggle"),
+          mm = $("#mobile-menu");
+        function setMenu(o) {
+          mm.style.maxHeight = o ? mm.scrollHeight + "px" : "0";
+          mm.style.opacity = o ? "1" : "0";
+          mt.setAttribute("aria-expanded", o);
+          $("#icon-open").style.display = o ? "none" : "block";
+          $("#icon-close").style.display = o ? "block" : "none";
+        }
+        mt.addEventListener("click", () =>
+          setMenu(mt.getAttribute("aria-expanded") !== "true"),
+        );
+        $$("a", mm).forEach((a) =>
+          a.addEventListener("click", () => setMenu(false)),
+        );
+        // Reveal
+        const io = new IntersectionObserver(
+          (es) =>
+            es.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            }),
+          { threshold: 0.1 },
+        );
+        $$(".reveal").forEach((el) => io.observe(el));
+        // TOC scroll-spy
+        const tl = $$("#toc a"),
+          secs = tl.map((a) => $(a.getAttribute("href")));
+        const so = new IntersectionObserver(
+          (es) =>
+            es.forEach((e) => {
+              if (e.isIntersecting) {
+                tl.forEach((l) =>
+                  l.classList.toggle(
+                    "on",
+                    l.getAttribute("href") === "#" + e.target.id,
+                  ),
+                );
+              }
+            }),
+          { rootMargin: "-30% 0px -60% 0px" },
+        );
+        secs.forEach((s) => so.observe(s));
+        // Header, progress, back-to-top, year
+        const yr = document.getElementById("year");
+        if (yr) yr.textContent = new Date().getFullYear();
+        const bt = $("#back-to-top"),
+          hdr = $("#hdr"),
+          pg = $("#progress");
+        function onScroll() {
+          bt.classList.toggle("show", scrollY > 600);
+          hdr.classList.toggle("scrolled", scrollY > 20);
+          const h = document.documentElement.scrollHeight - innerHeight;
+          pg.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
+        }
+        addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        bt.addEventListener("click", () =>
+          scrollTo({ top: 0, behavior: "smooth" }),
+        );
+        $("#print-btn").addEventListener("click", () => print());
+      </script>
+    </body>
+  </html>
 </html>
