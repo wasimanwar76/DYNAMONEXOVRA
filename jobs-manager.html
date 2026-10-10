@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Roles Manager | Dynamonexovra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .field {
+        width: 100%;
+        border: 1px solid #334155;
+        border-radius: 0.75rem;
+        background: #020617;
+        padding: 0.75rem 1rem;
+        color: #f8fafc;
+        outline: none;
+      }
+      .field:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 2px rgb(99 102 241 / 0.18);
+      }
+      .field::placeholder {
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <main class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+      <header
+        class="mb-8 flex flex-col gap-4 border-b border-slate-800 pb-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p
+            class="text-xs font-bold uppercase tracking-[0.25em] text-indigo-400"
+          >
+            Dynamonexovra Technology
+          </p>
+          <h1 class="mt-2 text-3xl font-bold text-white">Open Roles Manager</h1>
+          <p class="mt-2 text-sm text-slate-400">
+            Create and delete MongoDB job listings.
+          </p>
+        </div>
+        <button
+          id="logoutBtn"
+          class="hidden rounded-xl border border-slate-700 px-4 py-2 text-sm hover:bg-slate-800"
+        >
+          Sign out
+        </button>
+      </header>
+      <section
+        id="loginPanel"
+        class="mx-auto mt-12 max-w-md rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl sm:p-8"
+      >
+        <div
+          class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/15 text-2xl"
+        >
+          🔐
+        </div>
+        <h2 class="text-2xl font-bold">Admin sign in</h2>
+        <p class="mt-2 text-sm text-slate-400">
+          Sign in to manage job listings.
+        </p>
+        <form id="loginForm" class="mt-6 space-y-4">
+          <div>
+            <label for="userId" class="mb-2 block text-sm text-slate-300"
+              >User ID</label
+            ><input
+              id="userId"
+              autocomplete="username"
+              required
+              class="field"
+              placeholder="Enter admin user ID"
+            />
+          </div>
+          <div>
+            <label for="password" class="mb-2 block text-sm text-slate-300"
+              >Password</label
+            ><input
+              id="password"
+              type="text"
+              autocomplete="current-password"
+              required
+              class="field"
+              placeholder="Enter password"
+            />
+          </div>
+          <button
+            class="w-full rounded-xl bg-indigo-600 px-4 py-3 font-semibold hover:bg-indigo-500"
+            type="submit"
+          >
+            Sign in
+          </button>
+          <p
+            id="loginError"
+            class="hidden rounded-lg bg-red-500/10 p-3 text-sm text-red-300"
+          ></p>
+        </form>
+        <p class="mt-5 text-xs leading-5 text-amber-300">
+          This login check runs in the browser only and is not secure
+          authentication.
+        </p>
+      </section>
+      <section id="managerPanel" class="hidden space-y-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5">
+          <label for="apiBase" class="mb-2 block text-sm font-semibold"
+            >API base URL</label
+          >
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <input
+              id="apiBase"
+              class="field min-w-0 flex-1"
+              placeholder="https://your-api.vercel.app"
+            /><button
+              id="saveApiBtn"
+              type="button"
+              class="rounded-xl border border-slate-700 px-5 py-3 font-semibold hover:bg-slate-800"
+            >
+              Save URL</button
+            ><button
+              id="refreshBtn"
+              type="button"
+              class="rounded-xl bg-slate-700 px-5 py-3 font-semibold hover:bg-slate-600"
+            >
+              Refresh jobs
+            </button>
+          </div>
+          <p class="mt-2 text-xs text-slate-500">
+            Enter the deployed API base URL without a trailing slash. Local
+            example: http://localhost:3000
+          </p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <form
+            id="jobForm"
+            class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-6"
+          >
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-indigo-400"
+              >
+                New listing
+              </p>
+              <h2 class="mt-1 text-xl font-bold">Create a job</h2>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="sm:col-span-2">
+                <label for="title" class="mb-1.5 block text-sm text-slate-300"
+                  >Job title *</label
+                ><input
+                  id="title"
+                  required
+                  class="field"
+                  placeholder="Full Stack Web Engineer"
+                />
+              </div>
+              <div>
+                <label
+                  for="category"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Display category *</label
+                ><input
+                  id="category"
+                  required
+                  class="field"
+                  placeholder="Web Development"
+                />
+              </div>
+              <div>
+                <label
+                  for="filterCategory"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Filter group</label
+                ><select id="filterCategory" class="field">
+                  <option value="eng">Engineering</option>
+                  <option value="infra">Cloud &amp; Support</option>
+                  <option value="legal">Legal</option>
+                </select>
+              </div>
+              <div>
+                <label for="skills" class="mb-1.5 block text-sm text-slate-300"
+                  >Skills</label
+                ><input
+                  id="skills"
+                  class="field"
+                  placeholder="React, Node.js, MongoDB"
+                />
+              </div>
+              <div>
+                <label
+                  for="employmentType"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Employment type</label
+                ><select id="employmentType" class="field">
+                  <option>Full-time</option>
+                  <option>Part-time</option>
+                  <option>Contract</option>
+                  <option>Internship</option>
+                  <option>Consultant</option>
+                  <option>Part-time / Consult</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="location"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Location</label
+                ><input
+                  id="location"
+                  class="field"
+                  placeholder="Auraiya / Remote"
+                />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="about" class="mb-1.5 block text-sm text-slate-300"
+                  >About the role</label
+                ><textarea
+                  id="about"
+                  rows="3"
+                  class="field"
+                  placeholder="Describe the role..."
+                ></textarea>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="responsibilities"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Responsibilities (one per line)</label
+                ><textarea
+                  id="responsibilities"
+                  rows="3"
+                  class="field"
+                  placeholder="Build APIs&#10;Write tests"
+                ></textarea>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="requirements"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Requirements (one per line)</label
+                ><textarea
+                  id="requirements"
+                  rows="3"
+                  class="field"
+                  placeholder="Experience with React&#10;Clear communication"
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="applicationEmail"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Application email</label
+                ><input
+                  id="applicationEmail"
+                  type="email"
+                  class="field"
+                  value="careers@dynamonexovra.com"
+                />
+              </div>
+              <div>
+                <label
+                  for="applicationSubject"
+                  class="mb-1.5 block text-sm text-slate-300"
+                  >Email subject</label
+                ><input
+                  id="applicationSubject"
+                  class="field"
+                  placeholder="Application: Job Title"
+                />
+              </div>
+            </div>
+            <label class="flex items-center gap-3 text-sm text-slate-300"
+              ><input
+                id="active"
+                type="checkbox"
+                checked
+                class="h-4 w-4 rounded border-slate-600 bg-slate-950"
+              />Publish this job as active</label
+            >
+            <button
+              id="createBtn"
+              type="submit"
+              class="w-full rounded-xl bg-indigo-600 px-4 py-3 font-semibold hover:bg-indigo-500"
+            >
+              Add job to MongoDB
+            </button>
+            <p id="formMessage" class="hidden rounded-lg p-3 text-sm"></p>
+          </form>
+          <section
+            class="rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-6"
+          >
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-indigo-400"
+            >
+              Database listings
+            </p>
+            <h2 class="mt-1 text-xl font-bold">
+              Jobs <span id="jobCount" class="text-slate-400">(0)</span>
+            </h2>
+            <p id="listMessage" class="mt-4 text-sm text-slate-400">
+              Refresh to load jobs.
+            </p>
+            <div id="jobsList" class="mt-4 space-y-3"></div>
+          </section>
+        </div>
+      </section>
+      <footer
+        class="mt-10 border-t border-slate-800 pt-5 text-center text-xs text-slate-500"
+      >
+        © <span id="year"></span> Dynamonexovra Technology
+      </footer>
+    </main>
+    <script>
+      const ADMIN_USER_ID = "24scse2030475";
+      const ADMIN_PASSWORD = "8709863288";
+      const $ = (id) => document.getElementById(id);
+      $("year").textContent = new Date().getFullYear();
+      let signedIn = false;
+      $("apiBase").value =
+        localStorage.getItem("jobsApiBase") || "https://job-creation-alpha.vercel.app/";
+      const base = () => $("apiBase").value.trim().replace(/\/+$/, "");
+      const url = (path) => base() + path;
+      function listMessage(msg, error = false) {
+        $("listMessage").textContent = msg;
+        $("listMessage").className =
+          "mt-4 text-sm " + (error ? "text-red-300" : "text-slate-400");
+      }
+      function formMessage(msg, error = false) {
+        $("formMessage").textContent = msg;
+        $("formMessage").className =
+          "rounded-lg p-3 text-sm " +
+          (error
+            ? "bg-red-500/10 text-red-300"
+            : "bg-emerald-500/10 text-emerald-300");
+      }
+      $("loginForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (
+          $("userId").value.trim() === ADMIN_USER_ID &&
+          $("password").value === ADMIN_PASSWORD
+        ) {
+          signedIn = true;
+          $("loginPanel").classList.add("hidden");
+          $("managerPanel").classList.remove("hidden");
+          $("logoutBtn").classList.remove("hidden");
+          $("loginError").classList.add("hidden");
+          await loadJobs();
+        } else {
+          $("loginError").textContent = "Incorrect User ID or password.";
+          $("loginError").classList.remove("hidden");
+        }
+      });
+      $("logoutBtn").addEventListener("click", () => {
+        signedIn = false;
+        $("managerPanel").classList.add("hidden");
+        $("loginPanel").classList.remove("hidden");
+        $("logoutBtn").classList.add("hidden");
+        $("password").value = "";
+      });
+      $("saveApiBtn").addEventListener("click", () => {
+        if (!base()) return listMessage("Enter your API URL first.", true);
+        $("apiBase").value = base();
+        localStorage.setItem("jobsApiBase", base());
+        loadJobs();
+      });
+      $("refreshBtn").addEventListener("click", loadJobs);
+      async function loadJobs() {
+        if (!signedIn) return;
+        listMessage("Loading jobs...");
+        try {
+          const r = await fetch(url("/api/jobs?all=true"));
+          const d = await r.json().catch(() => ({}));
+          if (!r.ok)
+            throw Error(d.message || "Request failed (" + r.status + ")");
+          const jobs = Array.isArray(d.jobs) ? d.jobs : [];
+          $("jobCount").textContent = "(" + jobs.length + ")";
+          $("jobsList").replaceChildren();
+          if (!jobs.length) {
+            listMessage("No jobs found. Add your first job.");
+            return;
+          }
+          listMessage("Jobs loaded successfully.");
+          jobs.forEach((job) => {
+            const card = document.createElement("article");
+            card.className =
+              "rounded-xl border border-slate-800 bg-slate-950 p-4";
+            const row = document.createElement("div");
+            row.className = "flex items-start justify-between gap-3";
+            const info = document.createElement("div");
+            info.className = "min-w-0";
+            const title = document.createElement("h3");
+            title.className = "font-semibold text-white";
+            title.textContent = job.title || "Untitled job";
+            const meta = document.createElement("p");
+            meta.className = "mt-1 text-xs leading-5 text-slate-400";
+            meta.textContent = [job.category, job.employmentType, job.location]
+              .filter(Boolean)
+              .join(" · ");
+            info.append(title, meta);
+            const status = document.createElement("span");
+            status.className =
+              "shrink-0 rounded-full px-2.5 py-1 text-xs " +
+              (job.active === false
+                ? "bg-amber-500/10 text-amber-300"
+                : "bg-emerald-500/10 text-emerald-300");
+            status.textContent = job.active === false ? "Inactive" : "Active";
+            row.append(info, status);
+            const skills = document.createElement("p");
+            skills.className = "mt-3 text-sm text-slate-300";
+            skills.textContent = job.skills || "No skills specified";
+            const id = document.createElement("p");
+            id.className = "mt-2 break-all text-[11px] text-slate-600";
+            id.textContent = "ID: " + (job._id || "Unknown");
+            const del = document.createElement("button");
+            del.type = "button";
+            del.className =
+              "mt-4 rounded-lg border border-red-900/70 px-3 py-2 text-sm font-semibold text-red-300 hover:bg-red-500/10";
+            del.textContent = "Delete job";
+            del.addEventListener("click", () => deleteJob(job._id, job.title));
+            card.append(row, skills, id, del);
+            $("jobsList").append(card);
+          });
+        } catch (err) {
+          listMessage(
+            "Could not load jobs: " +
+              err.message +
+              ". Check API URL, server and CORS.",
+            true,
+          );
+        }
+      }
+      $("jobForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const title = $("title").value.trim(),
+          category = $("category").value.trim();
+        if (!title || !category)
+          return formMessage(
+            "Job title and display category are required.",
+            true,
+          );
+        const payload = {
+          title,
+          category,
+          filterCategory: $("filterCategory").value,
+          skills: $("skills").value.trim(),
+          employmentType: $("employmentType").value,
+          location: $("location").value.trim(),
+          about: $("about").value.trim(),
+          responsibilities: $("responsibilities")
+            .value.split("\n")
+            .map((x) => x.trim())
+            .filter(Boolean),
+          requirements: $("requirements")
+            .value.split("\n")
+            .map((x) => x.trim())
+            .filter(Boolean),
+          applicationEmail:
+            $("applicationEmail").value.trim() || "careers@dynamonexovra.com",
+          applicationSubject:
+            $("applicationSubject").value.trim() || "Application: " + title,
+          active: $("active").checked,
+        };
+        $("createBtn").disabled = true;
+        $("createBtn").textContent = "Saving...";
+        try {
+          const r = await fetch(url("/api/jobs"), {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const d = await r.json().catch(() => ({}));
+          if (!r.ok)
+            throw Error(d.message || "Request failed (" + r.status + ")");
+          $("jobForm").reset();
+          $("applicationEmail").value = "careers@dynamonexovra.com";
+          $("active").checked = true;
+          formMessage("Job added successfully to MongoDB.");
+          await loadJobs();
+        } catch (err) {
+          formMessage("Could not add job: " + err.message, true);
+        } finally {
+          $("createBtn").disabled = false;
+          $("createBtn").textContent = "Add job to MongoDB";
+        }
+      });
+      async function deleteJob(id, title) {
+        if (!id) return listMessage("Job has no MongoDB ID.", true);
+        if (!confirm('Delete "' + (title || "this job") + '" permanently?'))
+          return;
+        try {
+          const r = await fetch(url("/api/jobs/" + encodeURIComponent(id)), {
+            method: "DELETE",
+          });
+          const d = await r.json().catch(() => ({}));
+          if (!r.ok)
+            throw Error(d.message || "Request failed (" + r.status + ")");
+          await loadJobs();
+          listMessage("Job deleted successfully.");
+        } catch (err) {
+          listMessage("Could not delete job: " + err.message, true);
+        }
+      }
+    </script>
+  </body>
+</html>
